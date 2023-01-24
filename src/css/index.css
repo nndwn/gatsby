@@ -1,0 +1,14 @@
+
+@tailwind base;
+@layer base{
+    body{
+        text-rendering: optimizelegibility;
+        @apply antialiased;
+        @apply bg-white;
+    }
+}
+@tailwind components;
+@tailwind utilities;
+
+
+
