@@ -4,9 +4,16 @@ module.exports = {
   content: [
     "./src/pages/**/*.{js,jsx,ts,tsx}",
     "./src/components/**/*.{js,jsx,ts,tsx}",
+    "gatsby-ssr.js",
   ],
   theme: {
+    container:{
+      'padding':'5vw'
+    },
     extend: {
+      body:{
+        'text-rendering': 'optimizelegibility',
+      },
       colors:{
         'blueTheme':'#002463',
         'tosca':'#47C4DC' 
@@ -19,8 +26,12 @@ module.exports = {
       }
     },
   },
+  corePlugins: {
+    aspectRatio: false,
+  },
   plugins: [
     require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/typography')
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
   ],
 }

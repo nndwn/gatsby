@@ -1,0 +1,32 @@
+[
+    {
+      "title":"inspection",
+      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+      "img":"./src/images/logo.jpg"
+    },
+    {
+      "title":"consulting",
+      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+      "img":"./src/images/logo.jpg"
+    },
+    {
+      "title":"expediting",
+      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+      "img":"./src/images/logo.jpg"
+    },
+    {
+      "title":"engineering",
+      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+      "img":"./src/images/logo.jpg"
+    },
+    {
+      "title":"auditing",
+      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+      "img":"./src/images/logo.jpg"
+    },
+    {
+      "title":"commodities",
+      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+      "img":"./src/images/logo.jpg"
+    }
+  ]

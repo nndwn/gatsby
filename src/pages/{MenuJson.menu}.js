@@ -1,14 +1,19 @@
 import * as React from 'react'
 import Layout from '../components/layout'
+import Seo from '../components/seo'
+import '../css/index.css'
 
 
-const BlogPost = () => {
+const Pages = () => {
     return (
-      <Layout pageTitle="Super Cool Blog Posts">
+      <Layout>
         <p>My blog post contents will go here (eventually).</p>
       </Layout>
     )
   }
-  export const Head = () => <title >test</title> 
+  export const Head = () => (
+    <Seo/>
+  )
 
-  export default BlogPost  
+
+  export default Pages  

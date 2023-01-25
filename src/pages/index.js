@@ -3,11 +3,12 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 import  '../css/index.css'
 
+
 const IndexPage = () => {
+
   return (
-    <Layout pageTitle="Home Page">
-      <p>Welcome Zes Enginering</p>
-      
+    <Layout>
+      <h1>Home</h1>
     </Layout>
   )
 }

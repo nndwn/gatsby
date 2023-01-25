@@ -1,6 +1,4 @@
 import { graphql, useStaticQuery } from "gatsby";
-
-
 const Company = () => {
     const company = useStaticQuery(graphql`
         query {
@@ -8,11 +6,6 @@ const Company = () => {
             nodes {
               about
               title
-              sosial {
-                facebook
-                twitter
-                linkedin
-              }
               logo
               domain
               telp
@@ -27,5 +20,6 @@ const Company = () => {
     `)
     return company.allCompanyJson.nodes
 }
-
 export default Company
+
+

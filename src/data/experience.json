@@ -1,0 +1,47 @@
+[
+    {
+      "title":"AUSTRIA AG – Vendor FMC SPO",
+      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+      "img":"./src/images/logo.jpg"
+    },
+    {
+      "title":"GOGO EARLY PRODUCTION PHASE 2-Cladtek",
+      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+      "img":"./src/images/logo.jpg"
+    },
+    {
+      "title":"Mitsui & Co., Ltd –Audit Inventory-Vendor APIPA",
+      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+      "img":"./src/images/logo.jpg"
+    },
+    {
+      "title":"RELIANCE INDUSTRIES LTD-GRP YARD JAKARTA",
+      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+      "img":"./src/images/logo.jpg"
+    },
+    {
+      "title":"BAROSSA SURF PROJECT",
+      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+      "img":"./src/images/logo.jpg"
+    },
+    {
+      "title":"NORTH FIELD EAST LNG PROJECT",
+      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+      "img":"./src/images/logo.jpg"
+    },
+    {
+      "title":"Adnoc Offshore Project",
+      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+      "img":"./src/images/logo.jpg"
+    },
+    {
+      "title":"ENI Merakesh",
+      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+      "img":"./src/images/logo.jpg"
+    },
+    {
+      "title":"OGDCL Project",
+      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+      "img":"./src/images/logo.jpg"
+    }
+  ]

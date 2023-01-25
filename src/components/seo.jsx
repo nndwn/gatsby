@@ -1,6 +1,7 @@
 import React from "react"
 //import { Meta } from "../hook/meta"
 import Company from "../hook/company";
+import Sosial from "../hook/sosial";
 import { Script } from "gatsby";
 import tailwindConfig from "../../tailwind.config";
 
@@ -10,8 +11,8 @@ function Truncate(str) {
 }
 
 const Seo = ({ title, desc, pathname, children}) =>{
-    const{ title: titledefault, about: descdefault, logo, domain, sosial, telp, type} = Company()[0]
-    const twitter = Object.values(sosial[0])
+    const{ title: titledefault, about: descdefault, logo, domain, telp, type} = Company()[0]
+    const twitter = Sosial()[0].username
     const seo ={
         title: title || titledefault,
         desc: desc || descdefault,
@@ -57,7 +58,7 @@ const Seo = ({ title, desc, pathname, children}) =>{
           <meta name="twitter:url" content={seo.url} />
           <meta name="twitter:description" content={short} />
           <meta name="twitter:image" content={seo.image} />
-          <meta name="twitter:creator" content={twitter} />
+          {<meta name="twitter:creator" content={twitter} /> }
           <meta name="msapplication-TileColor" content={defaultcolor}/>
           <meta content={defaultcolor} name="theme-color"/>
           <meta content={defaultcolor} name="msapplication-navbutton-color"/>

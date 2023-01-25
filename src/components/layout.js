@@ -1,15 +1,13 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
+import { Subnav, Nav } from '../components/nav'
 
-const Layout =({pageTitle, children})=>{
+const Layout =({children})=>{
     return(
         <div>
-            <nav>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/about'>About</Link></li>
-            </nav>
+            <Subnav/>
+            <Nav/>
             <main>
-                <h1>{pageTitle}</h1>
                 {children}
             </main>
         </div>
