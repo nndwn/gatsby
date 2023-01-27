@@ -27,8 +27,8 @@ const Subnav = () => {
             <div className="container-fluid py-2" role="navigation">
                 <div className="row">
                     <div className="col-7 d-flex justify-content-start">
-                        <div className="col-md-8 col-1 truncate">
-                            <Linked  >
+                        <div className="col-md-8 col-2 truncate">
+                            <Linked>
                                 <Address className="address"/>
                                 <span className="d-none d-sm-inline">{addreas}</span>
                             </Linked>
@@ -40,9 +40,14 @@ const Subnav = () => {
                             </Linked>
                         </div>
                     </div>
-                    <div className="col-5 d-flex justify-content-end">
-                        <div className="col-10 d-flex justify-content-sm-end align-items-center"><Telp/><Linked name={telp}/></div>
-                        <Social className="col-2 d-flex justify-content-end sosial align-items-center"/>
+                    <div className="col-5 d-flex justify-content-end left">
+                        <div className="col-10 d-flex justify-content-xs-end align-items-center">
+                            <Linked cls="text-end">
+                                <Telp/>
+                                <span className="d-none d-xs-inline">{telp}</span>
+                            </Linked>
+                        </div>
+                        <Social className="col-sm-2 d-flex ms-0 ms-xs-5 justify-content-end sosial align-items-center"/>
                     </div>
                 </div>
             </div>

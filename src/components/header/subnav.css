@@ -10,9 +10,10 @@
 }
 .subnav svg.email {
   height: 13px;
+  margin-bottom: 3px;
 }
 .subnav svg.address {
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 .subnav ul {
   list-style: none;
@@ -24,24 +25,16 @@
   text-decoration: none;
   font-size: var(--font-size-base);
 }
-.subnav .sosial {
-  margin-left: 46px;
-}
-.subnav .sosial a {
+.subnav .left a {
   width: 100%;
   align-self: center;
   text-align: center;
 }
+.subnav .sosial {
+  margin-left: 46px;
+}
 .subnav .sosial svg {
   height: 15px;
-}
-.subnav .sosial svg.facebook {
-  height: 17px;
-  max-height: 17px;
-}
-.subnav .sosial svg.linkedin {
-  height: 17px;
-  max-height: 17px;
 }
 
 .truncate {
