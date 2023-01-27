@@ -3,15 +3,14 @@ import React from "react"
 import Company from "../hook/company";
 import Sosial from "../hook/sosial";
 import { Script } from "gatsby";
-import tailwindConfig from "../../tailwind.config";
+import { colordefault } from "./colors";
 
-const defaultcolor =  tailwindConfig.theme.extend.colors.blueTheme
 function Truncate(str) {
   return str.length > 120 ? str.substring(37, 200) : str;
 }
 
 const Seo = ({ title, desc, pathname, children}) =>{
-    const{ title: titledefault, about: descdefault, logo, domain, telp, type} = Company()[0]
+    const{ title: titledefault, about: descdefault, logo, domain, telp, type} = Company()
     const twitter = Sosial()[0].username
     const seo ={
         title: title || titledefault,
@@ -59,9 +58,9 @@ const Seo = ({ title, desc, pathname, children}) =>{
           <meta name="twitter:description" content={short} />
           <meta name="twitter:image" content={seo.image} />
           {<meta name="twitter:creator" content={twitter} /> }
-          <meta name="msapplication-TileColor" content={defaultcolor}/>
-          <meta content={defaultcolor} name="theme-color"/>
-          <meta content={defaultcolor} name="msapplication-navbutton-color"/>
+          <meta name="msapplication-TileColor" content={colordefault}/>
+          <meta content={colordefault} name="theme-color"/>
+          <meta content={colordefault} name="msapplication-navbutton-color"/>
           {children}
         </>
       )

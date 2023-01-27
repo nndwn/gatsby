@@ -1,6 +1,3 @@
-@tailwind base;
-@tailwind components;
 .text-rendering{
     text-rendering : optimizelegibility;
 }
-@tailwind utilities;

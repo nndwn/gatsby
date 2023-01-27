@@ -1,12 +1,20 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
-import { Subnav, Nav } from '../components/nav'
+import Header from './header/header'
+import { Global, css } from "@emotion/react"
+import { colordefault, colorSecond } from './colors'
 
-const Layout =({children})=>{
+const Layout =({children}) =>{
+
     return(
         <div>
-            <Subnav/>
-            <Nav/>
+         <Global styles={css`
+          :root {
+            --defaultcolor: ${colordefault};
+            --secondcolor: ${colorSecond};
+          }
+        `}
+      />
+            <Header/>
             <main>
                 {children}
             </main>

@@ -9,6 +9,7 @@ const Sosial = () => {
           name
           link
           username
+          icon
         }
       }
     }
