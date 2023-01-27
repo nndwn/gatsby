@@ -12,7 +12,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "sass": "sass -w --style=compressed  scss/bootstrap.scss src/css/main.css"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",

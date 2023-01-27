@@ -1,6 +1,55 @@
 .subnav {
-    height: 5vh;
+  background-color: var(--defaultcolor);
 }
 .subnav svg {
-
+  max-height: 15px;
+  fill: var(--bs-white);
+  padding-right: 10px;
+  display: inline;
+  padding-bottom: 1px;
 }
+.subnav svg.email {
+  height: 13px;
+}
+.subnav svg.address {
+  margin-bottom: 2px;
+}
+.subnav ul {
+  list-style: none;
+  margin: auto;
+  padding: 0;
+}
+.subnav a {
+  color: var(--bs-light);
+  text-decoration: none;
+  font-size: var(--font-size-base);
+}
+.subnav .sosial {
+  margin-left: 46px;
+}
+.subnav .sosial a {
+  width: 100%;
+  align-self: center;
+  text-align: center;
+}
+.subnav .sosial svg {
+  height: 15px;
+}
+.subnav .sosial svg.facebook {
+  height: 17px;
+  max-height: 17px;
+}
+.subnav .sosial svg.linkedin {
+  height: 17px;
+  max-height: 17px;
+}
+
+.truncate {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/*# sourceMappingURL=subnav.css.map */
