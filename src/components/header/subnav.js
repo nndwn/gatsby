@@ -36,7 +36,7 @@ const Subnav = () => {
                         <div className="truncate ms-2">
                             <Linked>
                                 <Email className="email" />
-                                <span className="d-none d-lg-inline">{email}</span>
+                                <span className="d-none d-md-inline">{email}</span>
                             </Linked>
                         </div>
                     </div>
