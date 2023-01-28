@@ -12580,6 +12580,47 @@ textarea.form-control-lg {
 }
 :root {
   --font-size-base:0.8rem;
+  --trastion-base: .15s ease-in-out;
+  --transition-one: 0.5s ease-in-out;
+  --transition-two: 0.3s ease-in-out;
+}
+
+.truncate {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+a.link--metis {
+  position: relative;
+  transition: color var(--trastion-base);
+  -webkit-transition: color var(--trastion-base);
+  -moz-transition: color var(--trastion-base);
+}
+a.link--metis:hover {
+  color: var(--secondcolor);
+}
+
+a.link--metis::before {
+  content: "";
+  background-color: var(--secondcolor);
+  width: 100%;
+  position: absolute;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  transform-origin: 0% 0%;
+  transform: scale3d(1, 0, 1);
+  transition: transform var(--transition-two);
+  -webkit-transition: transform var(--transition-two);
+  -moz-transition: transform var(--transition-two);
+}
+
+a.link--metis:hover::before {
+  transform-origin: 0px 100%;
+  transform: scale3d(1, 1, 1);
 }
 
 /*# sourceMappingURL=main.css.map */

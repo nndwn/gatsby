@@ -23,20 +23,20 @@ const Social = ({className}) => {
 const Subnav = () => {
     const {addreas, email, telp} = Company()
     return(
-        <div className="subnav">
-            <div className="container-fluid py-2" role="navigation">
+        <nav className="subnav" role="navigation">
+            <div className="container-fluid py-2" >
                 <div className="row">
-                    <div className="col-7 d-flex justify-content-start">
-                        <div className="col-md-8 col-2 truncate">
+                    <div className="col-7 d-flex justify-content-start right">
+                        <div className="truncate">
                             <Linked>
                                 <Address className="address"/>
-                                <span className="d-none d-sm-inline">{addreas}</span>
+                                <span className="d-none d-lg-inline">{addreas}</span>
                             </Linked>
                         </div>
-                        <div className="col-4 truncate">
+                        <div className="truncate ms-2">
                             <Linked>
                                 <Email className="email" />
-                                <span className="d-none d-sm-inline">{email}</span>
+                                <span className="d-none d-lg-inline">{email}</span>
                             </Linked>
                         </div>
                     </div>
@@ -51,7 +51,7 @@ const Subnav = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
     )
 }
 export default Subnav

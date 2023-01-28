@@ -1,6 +1,9 @@
 .subnav {
   background-color: var(--defaultcolor);
 }
+.subnav a {
+  font-size: var(--font-size-base);
+}
 .subnav svg {
   max-height: 15px;
   fill: var(--bs-white);
@@ -8,41 +11,20 @@
   display: inline;
   padding-bottom: 1px;
 }
-.subnav svg.email {
+.subnav .right svg.email, .subnav .right svg.address {
   height: 13px;
   margin-bottom: 3px;
-}
-.subnav svg.address {
-  margin-bottom: 3px;
-}
-.subnav ul {
-  list-style: none;
-  margin: auto;
-  padding: 0;
-}
-.subnav a {
-  color: var(--bs-light);
-  text-decoration: none;
-  font-size: var(--font-size-base);
 }
 .subnav .left a {
   width: 100%;
   align-self: center;
   text-align: center;
 }
-.subnav .sosial {
+.subnav .left .sosial {
   margin-left: 46px;
 }
-.subnav .sosial svg {
+.subnav .left .sosial svg {
   height: 15px;
-}
-
-.truncate {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap !important;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
 }
 
 /*# sourceMappingURL=subnav.css.map */
