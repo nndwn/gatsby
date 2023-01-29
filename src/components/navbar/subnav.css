@@ -1,8 +1,12 @@
 .subnav {
   background-color: var(--defaultcolor);
+  left: 0;
+  right: 0;
+  top: 0;
 }
 .subnav a {
   font-size: var(--font-size-base);
+  color: var(--bs-light);
 }
 .subnav svg {
   max-height: 15px;

@@ -4,6 +4,11 @@
 
 .navigation {
   background-color: var(--bs-gray-300);
+  top: 40px;
+  position: sticky;
+}
+.navigation a {
+  color: var(--bs-light);
 }
 .navigation .left svg {
   max-width: 4rem;

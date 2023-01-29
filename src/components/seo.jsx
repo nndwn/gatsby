@@ -57,7 +57,7 @@ const Seo = ({ title, desc, pathname, children}) =>{
           <meta name="twitter:url" content={seo.url} />
           <meta name="twitter:description" content={short} />
           <meta name="twitter:image" content={seo.image} />
-          {<meta name="twitter:creator" content={twitter} /> }
+          <meta name="twitter:creator" content={twitter} /> 
           <meta name="msapplication-TileColor" content={colordefault}/>
           <meta content={colordefault} name="theme-color"/>
           <meta content={colordefault} name="msapplication-navbutton-color"/>

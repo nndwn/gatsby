@@ -1,15 +1,16 @@
 import React,{ useState } from "react";
 import Company from "../../hook/company";
-import Menu from "../../hook/menu";
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import BodyClassName from "react-body-classname";
 import './nav.css'
 
 //import { css } from "@emotion/react"
 
-
 const Nav = () => {
     const [toggle, setToggle] = useState(false)
+    const handleClick = () => {
+        setToggle(!toggle);
+      };
 
     return(
         <nav role= "navigation" className="container-lg navigation">
@@ -31,7 +32,7 @@ const Nav = () => {
                 <div className="nav-toggle col-2 d-lg-none align-self-center ">
                
                 {toggle && (
-                    <div className="bg-nav"></div>
+                    <div onClick={handleClick} className="bg-nav"></div>
                 )}
                 <BodyClassName className={toggle ? 'suppress-scroll' : '' }></BodyClassName>
                 <div className="nav-aside position-fixed" style={{ visibility: toggle ? 'visible' : 'hidden' }}>
@@ -46,14 +47,26 @@ const Nav = () => {
                     </ul>
                 </div>
                 <div className="nav-toggle-bar"></div>
-                <div className="nav-trigger" onClick={() => setToggle(!toggle)} ></div>
+                <div className="nav-trigger" onClick={handleClick} ></div>
                 </div>
                
             </div>
         </nav>
     )
 }
-
+const Menu = () => {
+    const menu = useStaticQuery(graphql`
+    query{
+        allMenuJson {
+            nodes {
+              id
+              menu
+            }
+          }
+    }
+    `)
+    return menu.allMenuJson.nodes
+}
 
 
 export default Nav

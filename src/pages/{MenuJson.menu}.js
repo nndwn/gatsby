@@ -1,10 +1,8 @@
 import * as React from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-//import '../../css/index.css'
-//import Menu from '../hook/menu'
 import { graphql } from 'gatsby'
-
+import { Capitalize } from '../components/tools'
 
 
 const Pages = ({data , children}) => {
@@ -25,9 +23,9 @@ const Pages = ({data , children}) => {
   }
 `
 
-
-  export const Head = () => (
-    <Seo/>
+  export const Head = ({data}) => (
+    
+    <Seo title={Capitalize(data.menuJson.menu)}/>
   )
 
 

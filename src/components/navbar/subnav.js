@@ -23,7 +23,7 @@ const Social = ({className}) => {
 const Subnav = () => {
     const {addreas, email, telp} = Company()
     return(
-        <nav className="subnav" role="navigation">
+        <nav className="subnav position-absolute" role="navigation">
             <div className="container-fluid py-2" >
                 <div className="row">
                     <div className="col-7 d-flex justify-content-start right">
