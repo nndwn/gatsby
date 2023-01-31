@@ -207,13 +207,23 @@ div.bear-react-carousel__slide-item__div{
     top: 0;
     opacity: 0.5;
 }
+.bear-react-carousel__slide-item[data-active="true"]{
+    .headline{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 .headline{
     color: var(--bs-light);
     z-index: 1;
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 2s ease 0.7s, transform 2s ease 0.7s;
     a {
         padding: 1rem 2rem;
         border-radius: .3125rem;
-        margin: 1.5rem;
+        margin: 0 1.5rem 2.5rem 1.5rem;
         width: 11.25rem;
         font-size: 1rem;
       
