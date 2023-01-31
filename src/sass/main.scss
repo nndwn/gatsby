@@ -1,0 +1,73 @@
+@use '../../bs/bootstrap.scss';
+@use './font.scss';
+
+:root{
+    --font-size-base :0.8rem;
+    --trastion-base: .15s ease-in-out;
+    --transition-one : 0.5s ease-in-out;
+    --transition-two : 0.3s ease-in-out;
+}
+.truncate{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+ul {
+    list-style: none;
+    margin: auto;
+    padding: 0;
+}
+%colorLink {
+    color:var(--secondcolor);
+}
+%activeLink {
+    transform-origin: 0% 100%;
+    transform: scale3d(1, 1, 1);
+}
+
+
+a{
+    text-decoration: none;
+
+    &.link--metis {
+        position: relative;
+        transition: color var(--trastion-base);
+        -webkit-transition: color var(--trastion-base);
+        -moz-transition: color var(--trastion-base);
+        @at-root &:hover{
+            @extend %colorLink;
+        }
+        @at-root &::before {
+            content: '';
+            background-color: var(--secondcolor);
+            width: 100%;
+            position: absolute;
+            height: .125rem;
+            bottom: -0.3125rem;
+            left: 0;
+            transform-origin: 0% 0%;
+            transform: scale3d(1, 0, 1);
+            transition: transform var(--transition-two);
+            -webkit-transition: transform var(--transition-two);
+            -moz-transition: transform var(--transition-two);
+        }
+        @at-root &:hover::before{
+            @extend %activeLink;
+            
+        }
+        
+        
+    }
+    &.link--metis.link--active {
+         @extend %colorLink;
+
+        @at-root &::before{
+            @extend %activeLink;
+        }
+     }
+
+
+}

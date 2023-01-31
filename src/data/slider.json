@@ -1,12 +1,42 @@
 [
     {
-        "slide": "./images/slide_1.jpg"
+        "slide": "./images/slide_1.jpg",
+        "alt":"gambar",
+        "textone":"WELCOME TO ZES",
+        "texttwo":"The Professional Services",
+        "textthree":"Since 2010 PT. Zea Enjeniring Service (ZES)",
+        "textfour": "Was Supporting Our Partner To Provide TPI/Technical Professional In Indonesia, Malaysia, Singapore, China, India, Korea & Worldwide",
+        "button": [ 
+            {"value":"1","name": "Read More", "url": "/about"},
+            {"value":"1","name": "Contact", "url": "/contact"}
+        
+        ]
     },
     {
-        "slide": "./images/slide_2.jpg"
+        "slide": "./images/slide_2.jpg",
+        "alt":"gambar",
+        "textone":"WELCOME TO ZES",
+        "texttwo":"Our Services",
+        "textthree":"",
+        "textfour": "Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+        "button": [ 
+            {"value":"1","name": "Read More", "url": "/service"},
+            {"value":"1","name": "Contact", "url": "/contact"}
+        
+        ]
     },
     {
-        "slide": "./images/slide_3.jpg"
+        "slide": "./images/slide_3.jpg",
+        "alt":"gambar",
+        "textone":"WELCOME TO ZES",
+        "texttwo":"Our Projects",
+        "textthree":"",
+        "textfour": "Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+        "button": [ 
+            {"value":"1","name": "Read More", "url": "/project"},
+            {"value":"1","name": "Contact", "url": "/contact"}
+        
+        ]
     }
 
 ]

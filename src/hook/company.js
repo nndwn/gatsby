@@ -5,7 +5,6 @@ const Company = () => {
           companyJson {
             about
             title
-            logo
             domain
             telp
             type
@@ -13,6 +12,9 @@ const Company = () => {
             email
             icon
             vision
+            logo {
+              publicURL
+            }
           }
         }
     `)

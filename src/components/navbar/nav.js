@@ -11,9 +11,8 @@ const Nav = () => {
     const handleClick = () => {
         setToggle(!toggle);
       };
-
     return(
-        <nav role= "navigation" className="container-lg navigation">
+        <nav role= "navigation" className="container-lg navigation position-fixed">
             <div className="d-flex py-2 justify-content-between">
                 <div className="logo col-lg-7 col-10 left">
                     <Link to="/">
@@ -24,7 +23,7 @@ const Nav = () => {
                 <ul className="d-lg-flex d-none col-5 m-0 align-items-center right justify-content-end">
                     {Menu().map(node => (
                             <li key={node.id}>
-                                <Link className="link--metis" to= {`/${node.menu}`} >{node.menu}</Link>
+                                <Link activeClassName="link--active" className="link--metis" to= {`/${node.menu}`} >{node.menu}</Link>
                             </li>
                         ))}
                 </ul>
@@ -32,10 +31,10 @@ const Nav = () => {
                 <div className="nav-toggle col-2 d-lg-none align-self-center ">
                
                 {toggle && (
-                    <div onClick={handleClick} className="bg-nav"></div>
+                    <div role={'button'} tabIndex={0} onClick={handleClick} onKeyDown={handleClick} className="bg-nav"></div>
                 )}
                 <BodyClassName className={toggle ? 'suppress-scroll' : '' }></BodyClassName>
-                <div className="nav-aside position-fixed" style={{ visibility: toggle ? 'visible' : 'hidden' }}>
+                <div className="nav-aside position-fixed" aria-hidden={true} style={{ visibility: toggle ? 'visible' : 'hidden' }}>
                     <ul >
                         <li ><Link className="link--metis" to="/">home</Link></li>
                      
@@ -47,7 +46,7 @@ const Nav = () => {
                     </ul>
                 </div>
                 <div className="nav-toggle-bar"></div>
-                <div className="nav-trigger" onClick={handleClick} ></div>
+                <div className="nav-trigger" role={'button'} tabIndex={0} onClick={handleClick} onKeyDown={handleClick}></div>
                 </div>
                
             </div>

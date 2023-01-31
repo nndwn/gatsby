@@ -1,9 +1,9 @@
 import React from "react"
-//import { Meta } from "../hook/meta"
 import Company from "../hook/company";
 import Sosial from "../hook/sosial";
 import { Script } from "gatsby";
 import { colordefault } from "./colors";
+
 
 function Truncate(str) {
   return str.length > 120 ? str.substring(37, 200) : str;
@@ -12,10 +12,11 @@ function Truncate(str) {
 const Seo = ({ title, desc, pathname, children}) =>{
     const{ title: titledefault, about: descdefault, logo, domain, telp, type} = Company()
     const twitter = Sosial()[0].username
+
     const seo ={
         title: title || titledefault,
         desc: desc || descdefault,
-        image: `${domain}${logo}`,
+        image: `${domain}${logo.publicURL}`,
         url : `${domain}${pathname || ''}`,
     }
     const short = Truncate(seo.desc);
