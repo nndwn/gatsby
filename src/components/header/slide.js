@@ -1,26 +1,12 @@
 import React,{useState} from "react";
 import Slidedata from "../../hook/sliderdata";
 import Carousel from 'react-bootstrap/Carousel';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { graphql, useStaticQuery } from "gatsby";
+import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
 import { Link } from "gatsby";
 import './slide.css'
+import bg from '../../images/blackt-will.png'
 
-
-const Backgroundimage = () => {
-    const data = useStaticQuery(graphql`
-    query {
-    imageSharp(id: {eq: "10f46737-3616-5106-8f56-6ca18b6f680d"}) {
-        original {
-          src
-        }
-      }
-    }
-    `)
-    return data.imageSharp.original.src
-}
-
-export const Slide = ({data}) => {
+export const Slide = () => {
     const interval = 8000
     const [aktiv] = useState(true)
     const nopause = false
@@ -40,7 +26,7 @@ export const Slide = ({data}) => {
                             alt = {node.alt}
                             className="vh-100 img-slide"
                         />
-                        <div className="bg position-absolute" style={{backgroundImage: `url(${Backgroundimage()})`}}></div>
+                        <div className="bg position-absolute" style={{ backgroundImage: `url(${bg})` }}></div>
                     </Carousel.Item>
                 )
                 )
@@ -65,8 +51,8 @@ export const Slide = ({data}) => {
                                     { null == node.textfour && aktiv ? "" : <div className="fs-6 fw-light text-break text-center">{node.textfour}</div>}
                                 </div>
                                 { node.button[0].value + node.button[1].value > 0 && aktiv ? <div className="d-flex buttons mb-5">
-                                    {node.button[0].value > 0 && aktiv ? <Link className="left " to="/">{node.button[0].name}</Link>:""}
-                                    {node.button[1].value > 0 && aktiv ? <Link className="right" to="/">{node.button[1].name}</Link>:""}
+                                    {node.button[0].value > 0 && aktiv ? <Link className="left " to={node.button[0].url}>{node.button[0].name}</Link>:""}
+                                    {node.button[1].value > 0 && aktiv ? <Link className="right" to={node.button[1].url}>{node.button[1].name}</Link>:""}
                                 </div>:null}
                             </div>
                         </div>
