@@ -65,8 +65,8 @@ export const Slide = ({data}) => {
                                     { null == node.textfour && aktiv ? "" : <div className="fs-6 fw-light text-break text-center">{node.textfour}</div>}
                                 </div>
                                 { node.button[0].value + node.button[1].value > 0 && aktiv ? <div className="d-flex buttons mb-5">
-                                    {node.button[0].value > 0 && aktiv ? <Link className="left " to={node.button[0].url}>{node.button[0].name}</Link>:""}
-                                    {node.button[1].value > 0 && aktiv ? <Link className="right" to={node.button[1].url}>{node.button[1].name}</Link>:""}
+                                    {node.button[0].value > 0 && aktiv ? <Link className="left " to="/">{node.button[0].name}</Link>:""}
+                                    {node.button[1].value > 0 && aktiv ? <Link className="right" to="/">{node.button[1].name}</Link>:""}
                                 </div>:null}
                             </div>
                         </div>

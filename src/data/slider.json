@@ -20,7 +20,7 @@
         "textthree":"",
         "textfour": "Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
         "button": [ 
-            {"value":"1","name": "Read More", "url": "/service"},
+            {"value":"1","name": "Read More", "url": "/services"},
             {"value":"1","name": "Contact", "url": "/contact"}
         
         ]
