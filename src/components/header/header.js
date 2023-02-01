@@ -1,11 +1,16 @@
 import React from "react";
 import { Slide } from "./slide";
 import './header.css'
+import SSRProvider from 'react-bootstrap/SSRProvider';
 
 const Header = ({children}) => {
     return (
+        
         <header>
-            <Slide/>
+        <SSRProvider>
+         <Slide/>
+        </SSRProvider>
+          
             {children}
         </header>
     )

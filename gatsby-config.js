@@ -44,7 +44,7 @@ module.exports = {
       //develop: true, // Enable while using `gatsby develop`
       //tailwind: true, // Enable tailwindcss support
       // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-      purgeOnly : ['components/', 'css/'], // Purge only these files/folders
+      purgeOnly : ['components/'], // Purge only these files/folders
       purgeCSSOptions: {
         // https://purgecss.com/configuration.html#options
         // safelist: ['safelist'], // Don't remove this selector
