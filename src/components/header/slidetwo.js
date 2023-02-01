@@ -22,7 +22,7 @@ const Backgroundimage = () => {
 export const Slidetwo = () => {
 const [aktiv] = useState(true)
 
-const bearSlideItemData: TBearSlideItemDataList  = Slidedata().map(node => {
+const bearSlideItemData = Slidedata().map(node => {
     return {
         key: node.id,
         children: <BearSlideItem imageUrl={node.slide.childImageSharp.original.src}>

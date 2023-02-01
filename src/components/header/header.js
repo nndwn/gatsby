@@ -1,11 +1,11 @@
 import React from "react";
-import { Slidetwo } from "./slidetwo";
+import { Slide } from "./slide";
 import './header.css'
 
 const Header = ({children}) => {
     return (
         <header>
-            <Slidetwo/>
+            <Slide/>
             {children}
         </header>
     )
