@@ -2,7 +2,7 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import  '../css/main.css'
-
+import { graphql } from "gatsby";
 
 const IndexPage = () => {
 
@@ -12,6 +12,9 @@ const IndexPage = () => {
     </Layout>
   )
 }
+
+
+
 
 export const Head = () => (
     <Seo/>

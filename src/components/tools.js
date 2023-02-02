@@ -11,3 +11,6 @@ export const Capitalize = str => {
       str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
     );
   };
+
+export const Truncate = (str,limit,cutfront,cutback) => (
+  str.length > limit ? str.substring(cutfront, cutback) : str)

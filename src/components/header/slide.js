@@ -1,22 +1,20 @@
 import React,{useState} from "react";
-import Slidedata from "../../hook/sliderdata";
 import Carousel from 'react-bootstrap/Carousel';
-import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage} from 'gatsby-plugin-image'
 import { Link } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import './slide.css'
 import bg from '../../images/blackt-will.png'
 
 export const Slide = () => {
     const interval = 8000
     const [aktiv] = useState(true)
-    const nopause = false
-    const nocontrol = false
-    const indicator = false
     return (
         <>
         <Carousel 
-        pause={nopause}
-        controls={nocontrol}
+        pause={false}
+        controls={false}
+        touch = {false}
         >
             {
                 Slidedata().map(node => (
@@ -51,4 +49,36 @@ export const Slide = () => {
 
 }
 
+export const Slidedata = () => {
+    const data = useStaticQuery( graphql`
+        query {
+            allSliderJson {
+                nodes {
+                    slide {
+                        childImageSharp {
+                            original {
+                                src
+                              }
+                            gatsbyImageData(quality: 100, layout: FULL_WIDTH, placeholder: BLURRED)
+                        }
+                    }
+                    id
+                    alt
+                    textone
+                    texttwo
+                    textthree
+                    textfour
+                    button {
+                        name
+                        url
+                        value
+                    }
+                }
+            }
+        } 
+
+        `
+    )
+    return data.allSliderJson.nodes
+}
 

@@ -3,11 +3,7 @@ import Company from "../hook/company";
 import Sosial from "../hook/sosial";
 import { Script } from "gatsby";
 import { colordefault } from "./colors";
-
-
-function Truncate(str) {
-  return str.length > 120 ? str.substring(37, 200) : str;
-}
+import { Truncate } from "./tools";
 
 const Seo = ({ title, desc, pathname, children}) =>{
     const{ title: titledefault, about: descdefault, logo, domain, telp, type} = Company()
@@ -19,7 +15,7 @@ const Seo = ({ title, desc, pathname, children}) =>{
         image: `${domain}${logo.publicURL}`,
         url : `${domain}${pathname || ''}`,
     }
-    const short = Truncate(seo.desc);
+    const short = Truncate(seo.desc,120,37,200);
     const e = '{`\n'+
     '              {\n'+
     '                "@context": "https://schema.org",\n'+
@@ -48,9 +44,7 @@ const Seo = ({ title, desc, pathname, children}) =>{
     return (
         <>
           <title>{seo.title}</title>
-          <Script type="application/ld+json" strategy="off-main-thread">
-            {e}
-          </Script>
+          <Script type="application/ld+json" strategy="off-main-thread">{e}</Script>
           <meta name="description" content={short} />
           <meta name="image" content={seo.image} />
           <meta name="twitter:card" content="summary_large_image" />

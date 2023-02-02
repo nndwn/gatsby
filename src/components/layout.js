@@ -6,7 +6,7 @@ import Testing from './testing'
 import Nav from './navbar/nav'
 import Subnav from './navbar/subnav'
 
-const Layout =({children}) =>{
+const Layout =({children, page}) =>{
 
     return(
         <>
@@ -18,7 +18,7 @@ const Layout =({children}) =>{
         `}/>
             <Subnav/>
             <Nav/>
-            <Header/>
+            <Header page={page}/>
             <main>
                 {children}
             </main>

@@ -1,0 +1,17 @@
+
+%absoluteImage {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.miniheader{
+    height: 40vh;
+    color: var(--bs-light);
+    .miniheader__image {
+        @extend %absoluteImage;
+    }
+    .text {
+        z-index: 2;
+    }
+}
