@@ -71,3 +71,15 @@ a{
 
 
 }
+
+.line-text{
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: var(--bs-light);
+        height: 5px;
+        bottom: -5px;
+        width: 2.5rem;
+    }
+}
