@@ -5,6 +5,7 @@ import { colordefault, colorSecond } from './colors'
 import Testing from './testing'
 import Nav from './navbar/nav'
 import Subnav from './navbar/subnav'
+import Footer from './footer/footer'
 
 const Layout =({children, page}) =>{
 
@@ -22,6 +23,7 @@ const Layout =({children, page}) =>{
             <main>
                 {children}
             </main>
+          <Footer/>
         </>
     )
 }

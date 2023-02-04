@@ -1,7 +1,8 @@
 import React,{ useState } from "react";
 import Company from "../../hook/company";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import BodyClassName from "react-body-classname";
+import { Listurl } from "../tools";
 import './nav.css'
 
 //import { css } from "@emotion/react"
@@ -22,9 +23,7 @@ const Nav = () => {
                 </div>
                 <ul className="d-lg-flex d-none col-5 m-0 align-items-center right justify-content-end">
                     {Menu().map(node => (
-                            <li key={node.id}>
-                                <Link activeClassName="link--active" className="link--metis" to= {`/${node.menu}`} >{node.menu}</Link>
-                            </li>
+                            <Listurl key={node.id} activeClassName="link--active" className="link--metis" to={`/${node.menu}`} list= {node.menu}/>
                         ))}
                 </ul>
           
@@ -39,9 +38,7 @@ const Nav = () => {
                         <li ><Link className="link--metis" to="/">home</Link></li>
                      
                         {Menu().map(node => (
-                                <li key={node.id}>
-                                    <Link className="link--metis" to= {`/${node.menu}`} >{node.menu}</Link>
-                                </li>
+                                    <Listurl key={node.id} className="link--metis" to={`/${node.menu}`} list={node.menu}/>
                             ))}
                     </ul>
                 </div>

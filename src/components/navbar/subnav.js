@@ -1,24 +1,10 @@
 
 import * as React from "react";
 import { Email, Address, Telp} from "../icons";
-import Sosial from "../../hook/sosial";
+import {Sosial} from "../sosial";
 import Company from "../../hook/company";
 import { Linked } from "../tools";
 import "./subnav.css"
-
-
-
-const Social = ({className}) => {
-    const sosiallist = Sosial().map((sosial) => {
-        return (
-                <Linked key={sosial.id} title={sosial.name} to={`${sosial.link + sosial.username}`}>
-                    <i dangerouslySetInnerHTML={{__html:sosial.icon}}/>
-                </Linked>
-            )
-        }
-    ) 
-    return <div className={className} >{sosiallist}</div>   
-}
 
 const Subnav = () => {
     const {addreas, email, telp} = Company()
@@ -47,7 +33,7 @@ const Subnav = () => {
                                 <span className="d-none d-xs-inline">{telp}</span>
                             </Linked>
                         </div>
-                        <Social className="col-sm-2 d-flex ms-0 ms-xs-5 justify-content-end sosial align-items-center"/>
+                        <Sosial kelas="col-sm-2 d-flex ms-0 ms-xs-5 justify-content-end sosial align-items-center"/>
                     </div>
                 </div>
             </div>

@@ -1,13 +1,20 @@
 import React from "react"
 import Company from "../hook/company";
-import Sosial from "../hook/sosial";
+import Sosial from "./sosial";
 import { Script } from "gatsby";
 import { colordefault } from "./colors";
 import { Truncate } from "./tools";
+import { graphql, useStaticQuery } from "gatsby";
 
 const Seo = ({ title, desc, pathname, children}) =>{
     const{ title: titledefault, about: descdefault, logo, domain, telp, type} = Company()
-    const twitter = Sosial()[0].username
+    const twitter = useStaticQuery(graphql`
+    query MyQuery {
+      sosialJson(name: {eq: "twitter"}) {
+        username
+      }
+    }
+    `)
 
     const seo ={
         title: title || titledefault,
@@ -52,7 +59,7 @@ const Seo = ({ title, desc, pathname, children}) =>{
           <meta name="twitter:url" content={seo.url} />
           <meta name="twitter:description" content={short} />
           <meta name="twitter:image" content={seo.image} />
-          <meta name="twitter:creator" content={twitter} /> 
+          <meta name="twitter:creator" content={twitter.sosialJson.username} /> 
           <meta name="msapplication-TileColor" content={colordefault}/>
           <meta content={colordefault} name="theme-color"/>
           <meta content={colordefault} name="msapplication-navbutton-color"/>
