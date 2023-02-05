@@ -1,9 +1,8 @@
 
 import * as React from "react";
-import { Email, Address, Telp} from "../icons";
 import {Sosial} from "../sosial";
 import Company from "../../hook/company";
-import { Linked } from "../tools";
+import { Icondesc } from "../tools";
 import "./subnav.css"
 
 const Subnav = () => {
@@ -13,27 +12,12 @@ const Subnav = () => {
             <div className="container-fluid py-2" >
                 <div className="row">
                     <div className="col-7 d-flex justify-content-start right">
-                        <div className="truncate">
-                            <Linked>
-                                <Address className="address"/>
-                                <span className="d-none d-lg-inline">{addreas}</span>
-                            </Linked>
-                        </div>
-                        <div className="truncate ms-2">
-                            <Linked>
-                                <Email className="email" />
-                                <span className="d-none d-md-inline">{email}</span>
-                            </Linked>
-                        </div>
+                        <Icondesc name={addreas} div="truncate" svg="address" span="d-none d-lg-inline" nameicon="address"/>
+                        <Icondesc name={email} div="truncate ms-2" svg="email"  span="d-none d-md-inline" nameicon="email"/>
                     </div>
                     <div className="col-5 d-flex justify-content-end left">
-                        <div className="col-10 d-flex justify-content-xs-end align-items-center">
-                            <Linked cls="text-end">
-                                <Telp/>
-                                <span className="d-none d-xs-inline">{telp}</span>
-                            </Linked>
-                        </div>
-                        <Sosial kelas="col-sm-2 d-flex ms-0 ms-xs-5 justify-content-end sosial align-items-center"/>
+                        <Icondesc name={telp} span="d-none d-xs-inline" a="text-end" div="col-10 d-flex" nameicon="telp" />
+                        <Sosial className="col-sm-2 d-flex ms-0 ms-xs-5 justify-content-end sosial align-items-center"/>
                     </div>
                 </div>
             </div>
