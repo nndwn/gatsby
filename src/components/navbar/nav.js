@@ -7,14 +7,14 @@ import './nav.css'
 
 //import { css } from "@emotion/react"
 
-const Nav = () => {
+const Nav = props => {
     const [toggle, setToggle] = useState(false)
     const handleClick = () => {
         setToggle(!toggle);
       };
     return(
-        <nav role= "navigation" className="container-lg navigation position-fixed">
-            <div className="d-flex py-2 justify-content-between">
+        <nav  {...props} role= "navigation" className="navigation position-fixed">
+            <div className="d-flex py-2 justify-content-between container-lg">
                 <div className="logo col-lg-7 col-10 left">
                     <Link to="/">
                         <i dangerouslySetInnerHTML={{__html:Company().icon}}/>

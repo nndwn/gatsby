@@ -5,10 +5,10 @@ import Company from "../../hook/company";
 import { Icondesc } from "../tools";
 import "./subnav.css"
 
-const Subnav = () => {
+const Subnav =  props => {
     const {addreas, email, telp} = Company()
     return(
-        <nav className="subnav position-fixed" role="navigation">
+        <nav {...props} className="subnav position-fixed" role="navigation">
             <div className="container-fluid py-2" >
                 <div className="row">
                     <div className="col-7 d-flex justify-content-start right">

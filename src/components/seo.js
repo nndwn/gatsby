@@ -1,6 +1,5 @@
 import React from "react"
 import Company from "../hook/company";
-import Sosial from "./sosial";
 import { Script } from "gatsby";
 import { colordefault } from "./colors";
 import { Truncate } from "./tools";
