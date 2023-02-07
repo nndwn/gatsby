@@ -9,8 +9,6 @@ const Pages = ({data , children}) => {
   //const menu =  Menu()
     return (
       <Layout page={data.menuJson.menu}>
-        <p>My blog post contents will go here (eventually).</p>
-        {`${data.menuJson.menu}`}
         {children}
         </Layout>
     )

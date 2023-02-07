@@ -1,5 +1,5 @@
 import React from "react";
-
+import { graphql, useStaticQuery } from "gatsby";
 const MainServices = () => {
     return (
         <div>
