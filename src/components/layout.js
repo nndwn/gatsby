@@ -4,9 +4,10 @@ import { Global, css } from "@emotion/react"
 import { colordefault, colorSecond } from './colors'
 import Footer from './footer/footer'
 import Navbar from './navbar/navbar'
+import Main from './main/main'
+
 
 const Layout =({children, page}) =>{
-
     return(
         <>
          <Global styles={css`
@@ -17,9 +18,9 @@ const Layout =({children, page}) =>{
         `}/>
             <Navbar/>
             <Header page={page}/>
-            <main>
-                {children}
-            </main>
+            <Main page={page}>
+             {children}
+            </Main>
           <Footer/>
         </>
     )

@@ -2,7 +2,7 @@
 header {
     position: relative;
     .carousel-item {
-        transition: transform 2s ease-in-out;
+        transition: transform 1s ease-in-out;
     }
 }
 
@@ -24,11 +24,14 @@ header {
         opacity: 0 !important;
     }
 }
-// .active.carousel-item-start{
-//     .headline {
-//         transform: translateY(80px);
-//     }
-// }
+
+.carousel-item-prev {
+    .headline {
+        transform: translateY(80px);
+        opacity: 0 !important;
+    }
+}
+
 .headline{
     @extend %sizeabsolute;
     color: var(--bs-light);

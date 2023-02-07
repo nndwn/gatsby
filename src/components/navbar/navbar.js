@@ -1,7 +1,6 @@
 import React from "react";
 import Nav from "./nav";
 import Subnav from "./subnav";
-import { css } from '@emotion/react'
 import { useScroll, animated, useSpring } from '@react-spring/web'
 import { colordefault } from "../colors";
 
@@ -18,7 +17,7 @@ const Navbar = () => {
         top:'40px'
     }))
     
-    const { scrollYProgress } = useScroll({
+   useScroll({
         onChange: ({ value: { scrollYProgress } }) => {
           
             if (scrollYProgress > 0.7) {

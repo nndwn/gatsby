@@ -3,7 +3,7 @@ const Company = () => {
     const company = useStaticQuery(graphql`
         query {
           companyJson {
-            about
+            description
             title
             domain
             telp
@@ -11,7 +11,6 @@ const Company = () => {
             addreas
             email
             icon
-            vision
             logo {
               publicURL
             }

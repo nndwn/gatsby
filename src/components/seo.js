@@ -6,7 +6,7 @@ import { Truncate } from "./tools";
 import { graphql, useStaticQuery } from "gatsby";
 
 const Seo = ({ title, desc, pathname, children}) =>{
-    const{ title: titledefault, about: descdefault, logo, domain, telp, type} = Company()
+    const{ title: titledefault, description: descdefault, logo, domain, telp, type} = Company()
     const twitter = useStaticQuery(graphql`
     query MyQuery {
       sosialJson(name: {eq: "twitter"}) {
@@ -21,7 +21,7 @@ const Seo = ({ title, desc, pathname, children}) =>{
         image: `${domain}${logo.publicURL}`,
         url : `${domain}${pathname || ''}`,
     }
-    const short = Truncate(seo.desc,120,37,200);
+    const short = Truncate(seo.desc,120,0,200);
     const e = '{`\n'+
     '              {\n'+
     '                "@context": "https://schema.org",\n'+
