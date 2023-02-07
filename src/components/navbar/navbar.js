@@ -19,8 +19,8 @@ const Navbar = () => {
     
    useScroll({
         onChange: ({ value: { scrollYProgress } }) => {
-          
-            if (scrollYProgress > 0.7) {
+            //console.log(scrollYProgress)
+            if (scrollYProgress > 0.05) {
               textApi.start({ y: '-100%' })
                 colorApi.start({ background: colordefault, top:'0'})
             } else {

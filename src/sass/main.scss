@@ -77,9 +77,22 @@ a{
     &::before {
         content: "";
         position: absolute;
-        background-color: var(--bs-light);
         height: 5px;
         bottom: -5px;
         width: 2.5rem;
     }
 }
+
+
+    a[role=button] {
+        border-radius: .3125rem;
+        text-align: center;
+        &.left{
+            background-color: var(--secondcolor);
+            color: var(--bs-light);
+        }
+        &.right {
+            background-color: var(--bs-light);
+            color: var(--secondcolor);
+        }
+    }

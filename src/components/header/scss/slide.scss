@@ -38,25 +38,5 @@ header {
     z-index: 1;
     transform: translateY(0);
     transition: opacity .8s ease 0.7s, transform 0.8s ease 0.7s;
-    .buttons{
-        align-items: flex-start;
-        margin-bottom: 5rem;
-        flex-basis: 5rem;
-        a {
-            padding: 1rem 2rem;
-            border-radius: .3125rem;
-            width: 11.25rem;
-            font-size: 1rem;
-            display: block;
-            text-align: center;
-            &.left{
-                background-color: var(--secondcolor);
-                color: var(--bs-light);
-            }
-            &.right {
-                background-color: var(--bs-light);
-                color: var(--secondcolor);
-            }
-        }
-    }
+    
 }

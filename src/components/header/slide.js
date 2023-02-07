@@ -15,6 +15,7 @@ export const Slide = () => {
         pause={false}
         controls={false}
         touch = {false}
+        wrap = {true}
         >
             {
                 Slidedata().map(node => (
@@ -25,17 +26,17 @@ export const Slide = () => {
                             className="vh-100 img-slide"
                         />
                         <div className="bg position-absolute" style={{ backgroundImage: `url(${bg})` }}></div>
-                        <div className="position-absolute headline container-lg">
-                            <div className="d-flex flex-column align-items-center  vh-100">
-                                <div className="d-flex flex-grow-1 flex-column align-items-center justify-content-center  mt-5">
+                        <div className="position-absolute headline row justify-content-center">
+                            <div className="align-self-center col-lg-6">
+                                <div className="d-grid">
                                     { null == node.textone && aktiv ? "" : <div className="h6 fw-bold text-center">{node.textone}</div>}
-                                    { null == node.texttwo && aktiv ? "" : <div className="h2 fw-bold text-center">{node.texttwo}</div>}
+                                    { null == node.texttwo && aktiv ? "" : <div className="h2 fw-bold text-center m-0">{node.texttwo}</div>}
                                     { null == node.textthree && aktiv ? "" : <div className="h2 fw-bold text-center">{node.textthree}</div>}
                                     { null == node.textfour && aktiv ? "" : <div className="fs-6 fw-light text-break text-center">{node.textfour}</div>}
                                 </div>
-                                { node.button[0].value + node.button[1].value > 0 && aktiv ? <div className="row buttons justify-content-center">
-                                    {node.button[0].value > 0 && aktiv ? <Link className="left col-6 mx-2 mb-2" to={node.button[0].url}>{node.button[0].name}</Link>:""}
-                                    {node.button[1].value > 0 && aktiv ? <Link className="right col-6 mx-2 mb-2" to={node.button[1].url}>{node.button[1].name}</Link>:""}
+                                { node.button[0].value + node.button[1].value > 0 && aktiv ? <div className="mt-5 d-flex buttons justify-content-center">
+                                    {node.button[0].value > 0 && aktiv ? <Link role="button" className="left mx-2 col-3 mb-2 p-3" to={node.button[0].url}>{node.button[0].name}</Link>:""}
+                                    {node.button[1].value > 0 && aktiv ? <Link role="button" className="right mx-2 col-3 mb-2 p-3" to={node.button[1].url}>{node.button[1].name}</Link>:""}
                                 </div>:null}
                             </div>
                         </div>

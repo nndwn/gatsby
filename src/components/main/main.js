@@ -4,6 +4,7 @@ import MainAbout from "./about";
 import MainServices from "./services";
 import MainExperience from "./experi";
 import MainContact from "./contact";
+import "./css/main.css"
 
 const Main = ({children, page}) => {
     const query =  useStaticQuery (graphql`
@@ -19,7 +20,7 @@ const Main = ({children, page}) => {
   const data =  query.allMenuJson.nodes
     return (
         <main>
-            {null == page || page === data[0].menu ? <MainAbout/>:""}
+            {null == page || page === data[0].menu ? <MainAbout page={page}/>:""}
             {null == page || page === data[1].menu ? <MainServices/>:""}
             {null == page || page === data[2].menu ?  <MainExperience/>:""}
             {null == page || page === data[3].menu ? <MainContact/>: ""}

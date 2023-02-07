@@ -14,4 +14,7 @@
     .text {
         z-index: 2;
     }
+    .line-text::before{
+        background-color: var(--bs-light);
+    }
 }

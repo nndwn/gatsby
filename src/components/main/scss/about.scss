@@ -1,0 +1,51 @@
+%y {
+    top: 0;
+    bottom: 0;
+}
+%h{
+    @extend %y;
+    height: -webkit-fill-available;
+}
+%backgroundcolor {
+    background: rgb(0 36 99 / 20%);
+}
+
+.about {
+    @extend %backgroundcolor;
+    .img-right {
+        left: 0;
+        @extend %y;
+    }
+    @at-root.img-about {
+        @extend %h;
+    }
+}
+.vision {
+    .img-left {
+        right: 0;
+        @extend %y;
+    }
+}
+.line-text::before{
+    background-color: var(--defaultcolor);
+}
+
+.mission {
+    @extend %backgroundcolor;
+    svg {
+        fill: var(--defaultcolor);
+    }
+}
+
+.vision, .about {
+    mark {
+        background-color: transparent;
+        color: inherit;
+    }
+}
+.img-right, .img-left {
+    background-color: var(--defaultcolor);
+    .img-about {
+        opacity: 0.5;
+    }
+}

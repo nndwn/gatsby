@@ -1,1 +1,1 @@
-.miniheader .miniheader__image{top:0;left:0;right:0;bottom:0}.miniheader{height:35vh;color:var(--bs-light)}.miniheader .text{z-index:2}/*# sourceMappingURL=miniheader.css.map */
+.miniheader .miniheader__image{top:0;left:0;right:0;bottom:0}.miniheader{height:35vh;color:var(--bs-light)}.miniheader .text{z-index:2}.miniheader .line-text::before{background-color:var(--bs-light)}/*# sourceMappingURL=miniheader.css.map */
