@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Company from "../../hook/company";
-import './footer.css'
 import { useStaticQuery,graphql } from "gatsby";
 import { Listurl, Icondesc } from "../tools";
 import { Sosial } from "../sosial";
 import styled from "@emotion/styled";
 import stylelist from "../../images/icon_list_1.svg"
+import './css/footer.css'
 
 const Ul = styled.ul`
     list-style-image: url('${stylelist}');
@@ -23,11 +23,15 @@ const Footer = () => {
         }
         allServicesJson {
             nodes {
+              id
+              name
+              type {
                 id
-                title
                 url
+                title
+              }
             }
-        }
+          }
         allQuicklinkJson {
             nodes {
                 id
@@ -38,8 +42,8 @@ const Footer = () => {
     }
     `)
     return(
-    <footer className="footer ">
-        <div className="container-lg footer-top pt-5 pb-4 ">
+    <footer className="footer pt-5">
+        <div className="container-lg footer-top pb-4 ">
         <div className="row flex-row justify-content-center">
             <div className="logo col-8 col-md-2 d-flex flex-row mb-5">
                 <div dangerouslySetInnerHTML={{__html: logowhite}}/>
@@ -50,7 +54,12 @@ const Footer = () => {
             return(
                 <MenuList key={item.id} name={item.name} className={item.name.replace(/\W/g, "")}>
                 {item.name[1] <= item.name ? data.allServicesJson.nodes.map(node=> (
-                    <Listurl key={node.id} list={node.title} to={node.url}/>))
+                    <Fragment key={node.id}>
+                    {node.type.map(test => (
+                        <Listurl key={test.id} list={test.title} to={test.url}/>
+                    ))}
+                    </Fragment>
+                    ))
                     :item.name[2] <= item.name ? data.allQuicklinkJson.nodes.map(node => (
                         <Listurl key={node.id} list={node.list} to={node.url}/>))
                         :item.name[0] <= item.name ? 

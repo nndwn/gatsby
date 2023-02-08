@@ -2,7 +2,7 @@ import React from "react";
 import Nav from "./nav";
 import Subnav from "./subnav";
 import { useScroll, animated, useSpring } from '@react-spring/web'
-import { colordefault } from "../colors";
+import { colordefault,transparent } from "../colors";
 
 const Animatednav = animated(Nav)
 const AnimatedSubnav = animated(Subnav)
@@ -13,7 +13,7 @@ const Navbar = () => {
         y: '0',
       }))
     const [changecolor, colorApi] = useSpring(() => ({
-        background: 'transparent',
+        background: transparent,
         top:'40px'
     }))
     
@@ -25,7 +25,7 @@ const Navbar = () => {
                 colorApi.start({ background: colordefault, top:'0'})
             } else {
               textApi.start({ y: '0' })
-              colorApi.start({ background: 'transparent',top:'40px'})
+              colorApi.start({ background: transparent,top:'40px'})
          
             }
           },

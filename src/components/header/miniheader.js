@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
-import {Slidedata } from './slide';
-import './miniheader.css'
-import bg from '../../images/blackt-will.png'
+import {Slidedata, Bgheader } from './slide';
+import './css/miniheader.css'
+
 
 
 const Miniheader = ({title}) => {
@@ -14,7 +14,7 @@ const Miniheader = ({title}) => {
                     alt={Slidedata()[0].alt}
                     className="miniheader__image position-absolute"
                 />
-                 <div className="bg position-absolute" style={{ backgroundImage: `url(${bg})` }}></div>
+                <Bgheader/>
                 <div className='text container-lg text-center text-md-start'>
                     <h1 className='fw-bold text-capitalize pt-5 line-text'>{title} </h1>
                 </div>

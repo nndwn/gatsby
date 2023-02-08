@@ -3,12 +3,22 @@ import * as React from "react";
 import {Sosial} from "../sosial";
 import Company from "../../hook/company";
 import { Icondesc } from "../tools";
-import "./subnav.css"
+import { css } from "@emotion/react";
+import "./css/subnav.css"
+import { colorsubnav,bgcolorsubnav } from "../colors";
 
 const Subnav =  props => {
     const {addreas, email, telp} = Company()
     return(
-        <nav {...props} className="subnav position-fixed" role="navigation">
+        <nav {...props} className="subnav position-fixed" css={css`
+            background-color: ${bgcolorsubnav};
+            a {
+            color:${colorsubnav};
+            }
+            svg {
+                fill: ${colorsubnav};
+            }
+        `} role="navigation">
             <div className="container-fluid py-2" >
                 <div className="row">
                     <div className="col-7 d-flex justify-content-start right">

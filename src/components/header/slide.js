@@ -1,10 +1,11 @@
 import React,{useState} from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import { GatsbyImage, getImage} from 'gatsby-plugin-image'
-import { Link } from "gatsby";
 import { graphql, useStaticQuery } from "gatsby";
-import './slide.css'
+import './css/slide.css'
 import bg from '../../images/blackt-will.png'
+import { colorHeader, bgcolorHeader } from "../colors";
+import { Button } from "../tools";
 
 export const Slide = () => {
     const interval = 8000
@@ -25,8 +26,8 @@ export const Slide = () => {
                             alt = {node.alt}
                             className="vh-100 img-slide"
                         />
-                        <div className="bg position-absolute" style={{ backgroundImage: `url(${bg})` }}></div>
-                        <div className="position-absolute headline row justify-content-center">
+                        <Bgheader/>
+                        <div className="position-absolute headline row justify-content-center" style={{color:`${colorHeader}`}}>
                             <div className="align-self-center col-lg-6">
                                 <div className="d-grid">
                                     { null == node.textone && aktiv ? "" : <div className="h6 fw-bold text-center">{node.textone}</div>}
@@ -35,8 +36,8 @@ export const Slide = () => {
                                     { null == node.textfour && aktiv ? "" : <div className="fs-6 fw-light text-break text-center">{node.textfour}</div>}
                                 </div>
                                 { node.button[0].value + node.button[1].value > 0 && aktiv ? <div className="mt-5 d-flex buttons justify-content-center">
-                                    {node.button[0].value > 0 && aktiv ? <Link role="button" className="left mx-2 col-3 mb-2 p-3" to={node.button[0].url}>{node.button[0].name}</Link>:""}
-                                    {node.button[1].value > 0 && aktiv ? <Link role="button" className="right mx-2 col-3 mb-2 p-3" to={node.button[1].url}>{node.button[1].name}</Link>:""}
+                                    {node.button[0].value > 0 && aktiv ? <Button style={`primary`} className="left mx-2 col-3 mb-2 p-3" to={node.button[0].url}>{node.button[0].name}</Button>:""}
+                                    {node.button[1].value > 0 && aktiv ? <Button style={`secondary`}  className="right mx-2 col-3 mb-2 p-3" to={node.button[1].url}>{node.button[1].name}</Button>:""}
                                 </div>:null}
                             </div>
                         </div>
@@ -49,6 +50,9 @@ export const Slide = () => {
     )
 
 }
+export const Bgheader = () => (
+    <div className="colorheader position-absolute" style={{ backgroundImage: `url(${bg})`, backgroundColor:`${bgcolorHeader}` }}></div>
+) 
 
 export const Slidedata = () => {
     const data = useStaticQuery( graphql`

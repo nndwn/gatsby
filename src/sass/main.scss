@@ -1,5 +1,6 @@
 @use './custom.scss';
 @use './font.scss';
+@import './mixin';
 
 :root{
     --font-size-base :0.8rem;
@@ -20,9 +21,7 @@ ul {
     margin: auto;
     padding: 0;
 }
-%colorLink {
-    color:var(--secondcolor);
-}
+
 %activeLink {
     transform-origin: 0% 100%;
     transform: scale3d(1, 1, 1);
@@ -37,16 +36,12 @@ a{
         transition: color var(--trastion-base);
         -webkit-transition: color var(--trastion-base);
         -moz-transition: color var(--trastion-base);
-        @at-root &:hover{
-            @extend %colorLink;
-        }
         @at-root &::before {
             content: '';
-            background-color: var(--secondcolor);
             width: 100%;
             position: absolute;
-            height: .125rem;
-            bottom: -0.3125rem;
+            height: 4px;
+            bottom: -5px;
             left: 0;
             transform-origin: 0% 0%;
             transform: scale3d(1, 0, 1);
@@ -62,8 +57,6 @@ a{
         
     }
     &.link--metis.link--active {
-         @extend %colorLink;
-
         @at-root &::before{
             @extend %activeLink;
         }
@@ -71,28 +64,14 @@ a{
 
 
 }
-
 .line-text{
-    position: relative;
-    &::before {
-        content: "";
-        position: absolute;
-        height: 5px;
-        bottom: -5px;
-        width: 2.5rem;
-    }
+    @include line-text(2.5rem)
+}
+.line-text-full{
+    @include line-text(100%)
 }
 
-
-    a[role=button] {
-        border-radius: .3125rem;
-        text-align: center;
-        &.left{
-            background-color: var(--secondcolor);
-            color: var(--bs-light);
-        }
-        &.right {
-            background-color: var(--bs-light);
-            color: var(--secondcolor);
-        }
-    }
+a[role=button] {
+    border-radius: .3125rem;
+    text-align: center;
+}

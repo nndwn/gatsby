@@ -1,39 +1,50 @@
 [
 
     {
-      "title":"inspection",
-      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
-      "img":"./src/images/logo.jpg",
-      "url":"#"
-    },
-    {
-      "title":"consulting",
-      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
-      "img":"./src/images/logo.jpg",
-      "url":"#"
-    },
-    {
-      "title":"expediting",
-      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
-      "img":"./src/images/logo.jpg",
-      "url":"#"
-    },
-    {
-      "title":"engineering",
-      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
-      "img":"./src/images/logo.jpg",
-      "url":"#"
-    },
-    {
-      "title":"auditing",
-      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
-      "img":"./src/images/logo.jpg",
-      "url":"#"
-    },
-    {
-      "title":"commodities",
-      "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
-      "img":"./src/images/logo.jpg",
-      "url":"#"
+      "name": "our services",
+      "type": [
+        {
+          "id":"121",
+          "title":"inspection",
+          "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.ssdddssdsdsdsdsdsdsd",
+          "img":"./images/sample1.jpg",
+          "url":"#"
+        },
+        {
+          "id":"122",
+          "title":"consulting",
+          "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+          "img":"./images/sample2.png",
+          "url":"#"
+        },
+        {
+          "id":"123",
+          "title":"expediting",
+          "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+          "img":"./images/sample3.jpg",
+          "url":"#"
+        },
+        {
+          "id":"124",
+          "title":"engineering",
+          "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet tessdsdsdsdsdsddddd.",
+          "img":"./images/sample4.jpg",
+          "url":"#"
+        },
+        {
+          "id":"125",
+          "title":"auditing",
+          "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+          "img":"./images/sample5.jpg",
+          "url":"#"
+        },
+        {
+          "id":"126",
+          "title":"commodities",
+          "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
+          "img":"./images/sample6.jpg",
+          "url":"#"
+        }
+      ]
     }
 ]

@@ -3,17 +3,42 @@ import Company from "../../hook/company";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import BodyClassName from "react-body-classname";
 import { Listurl } from "../tools";
-import './nav.css'
+import { css } from "@emotion/react";
+import { colornav,colortogle,bgcolornavmobile, hovercolornav, bgcolormodal } from "../colors";
+import './css/nav.css'
 
-//import { css } from "@emotion/react"
 
 const Nav = props => {
     const [toggle, setToggle] = useState(false)
     const handleClick = () => {
         setToggle(!toggle);
       };
+    const query = useStaticQuery (graphql`
+    query {
+            allMenuJson {
+                nodes {
+                  id
+                  menu
+                }
+              }
+    } 
+    `)
+    const data = query.allMenuJson.nodes
+
     return(
-        <nav  {...props} role= "navigation" className="navigation position-fixed">
+        <nav  {...props} role= "navigation" className="navigation position-fixed" css={css`
+            a{ 
+                color: ${colornav};
+                &.link--metis:hover{
+                    color: ${hovercolornav}  
+                }
+                &.link--metis::before{
+                    background-color: ${hovercolornav}
+                }
+                &.link--metis.link--active{
+                    color: ${hovercolornav}  
+                }
+            }`}>
             <div className="d-flex py-2 justify-content-between container-lg">
                 <div className="logo col-lg-7 col-10 left">
                     <Link to="/">
@@ -22,7 +47,7 @@ const Nav = props => {
                     </Link>
                 </div>
                 <ul className="d-lg-flex d-none col-5 m-0 align-items-center right justify-content-end">
-                    {Menu().map(node => (
+                    {data.map(node => (
                             <Listurl key={node.id} activeClassName="link--active" className="link--metis" to={`/${node.menu}`} list= {node.menu}/>
                         ))}
                 </ul>
@@ -30,19 +55,31 @@ const Nav = props => {
                 <div className="nav-toggle col-2 d-lg-none align-self-center ">
                
                 {toggle && (
-                    <div role={'button'} tabIndex={0} onClick={handleClick} onKeyDown={handleClick} className="bg-nav"></div>
+                    <div role={'button'} tabIndex={0} onClick={handleClick} onKeyDown={handleClick} className="bg-nav" css={css`
+                        background-color: ${bgcolormodal}
+                    `}></div>
                 )}
                 <BodyClassName className={toggle ? 'suppress-scroll' : '' }></BodyClassName>
-                <div className="nav-aside position-fixed" aria-hidden={true} style={{ visibility: toggle ? 'visible' : 'hidden' }}>
+                <div className="nav-aside position-fixed" aria-hidden= {toggle ? '':true} style={{ visibility: toggle ? 'visible' : 'hidden' }} css={css`
+                    background-color:${bgcolornavmobile}
+                `}>
                     <ul >
                         <li ><Link className="link--metis" to="/">home</Link></li>
                      
-                        {Menu().map(node => (
+                        {data.map(node => (
                                     <Listurl key={node.id} className="link--metis" to={`/${node.menu}`} list={node.menu}/>
                             ))}
                     </ul>
                 </div>
-                <div className="nav-toggle-bar"></div>
+                <div className="nav-toggle-bar" css={css`
+                    background-color: ${colortogle};
+                    &::after {
+                        background-color: ${colortogle};
+                    }
+                    &::before{
+                        background-color: ${colortogle};
+                    }
+                `}></div>
                 <div className="nav-trigger" role={'button'} tabIndex={0} onClick={handleClick} onKeyDown={handleClick}></div>
                 </div>
                
@@ -50,19 +87,5 @@ const Nav = props => {
         </nav>
     )
 }
-const Menu = () => {
-    const menu = useStaticQuery(graphql`
-    query{
-        allMenuJson {
-            nodes {
-              id
-              menu
-            }
-          }
-    }
-    `)
-    return menu.allMenuJson.nodes
-}
-
 
 export default Nav

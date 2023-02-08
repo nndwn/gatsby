@@ -53,24 +53,30 @@
 @include media-breakpoint-up(sm) {  }
 
 
-.services, .quicklink{
-    @include make-col(6);
-}
-.contactaddress {
-    @include make-col(12);
-    margin-top: 2rem;
-    @include media-breakpoint-up(md) {
-        margin-top:0;
-    }
- 
-}
 
-.contactaddress,.services, .quicklink {
+footer {
     h4 {
         margin-bottom: 1rem;
     }
+%md{
+    @include make-col(6);
     @include media-breakpoint-up(md) {
         @include make-col(3);
+    }
+}
+    .contactaddress{
+        @include make-col(12);
+        margin-top: 2rem;
+        @include media-breakpoint-up(md) {
+            margin-top:0;
+            @include make-col(3);
+        }
+    }
+    .services {
+        @extend %md;
+    }
+    .quicklink {
+        @extend %md;
     }
 }
 .about , .vision{

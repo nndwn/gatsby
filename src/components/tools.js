@@ -1,6 +1,8 @@
-import * as React from "react";
+import React from "react";
 import { Link } from "gatsby";
 import { Email, Address, Telp} from "./icons";
+import { colorButtonDefault, textButtoncolorDefault,colorButtonalt,textButtoncoloralt} from "./colors";
+
 
 
 export const Linked = ({to , name , cls , title, icon, children}) =>(<a href={`${ to == null  ? '#' : to}`} title={title} className={cls}>{children}{icon}{name}</a>)
@@ -19,4 +21,19 @@ export const Icondesc =({name,div,a,span,nameicon,svg,url}) => {
             <span className={span}>{name}</span>
         </Linked>
     </div>
+)}
+export const Button = ({ children, className, to, style}) => {
+    const primary = {
+        backgroundColor: `${colorButtonDefault}`,
+        color: `${textButtoncolorDefault}`
+    }
+    const secondary = {
+        backgroundColor: `${colorButtonalt}`,
+        color: `${textButtoncoloralt}`
+    }
+    return(
+    <Link role="button" className={className} to={to} style={style === "primary" ? primary :
+    style === "secondary" ? secondary : ""}>
+        {children}
+    </Link>
 )}

@@ -13,9 +13,8 @@ header {
     bottom: 0;
 }
 
-.bg {
+.colorheader {
     @extend %sizeabsolute;
-    background-color: var(--defaultcolor);
     opacity: 0.4;
 }
 .carousel-item-next {

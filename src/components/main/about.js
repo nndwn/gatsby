@@ -63,7 +63,7 @@ const MainAbout = ({page}) => {
             </div>
             <div className="row">
             {dataMission.map(node =>(
-              <div className="col-12 col-sm-4 d-flex flex-column text-center align-items-center">
+              <div key={node.id} className="col-12 col-sm-4 d-flex flex-column text-center align-items-center">
                 <div className="mt-3" dangerouslySetInnerHTML={{__html:node.icon}}/>
                 <div className="mt-5">
                     <h5 className="fw-bold text-capitalize">{node.title}</h5>
