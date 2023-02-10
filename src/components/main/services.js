@@ -10,7 +10,7 @@ const MainServices = ({page}) => {
     return (
         <div className="services container-lg py-5" >
         {page == null ? Dataservice().map(node => (
-                <div className="row" key={node.id}>
+                <div className="row justify-content-center" key={node.id}>
                     <div className="text-center mb-3">
                         <h3 className="fw-bold text-capitalize line-text" css={css`
                         &::before{
@@ -18,7 +18,7 @@ const MainServices = ({page}) => {
                         }
                         `} >{node.name}</h3>
                     </div>
-                    <div className="row justify-content-center">
+                    <div className="row">
                         {
                             node.type.map(items =>(
                                 <div key={items.id} className="col-md-4 py-2">
@@ -46,7 +46,7 @@ const MainServices = ({page}) => {
            
         )):
         Dataservice().map(node => (
-            <div className="row" key={node.id}>
+            <div className="row justify-content-center" key={node.id}>
                 {node.type.map(items => (
                     <Fragment key={items.id}>
                         <div className="text-center mb-3 mt-4">
@@ -56,7 +56,7 @@ const MainServices = ({page}) => {
                         }
                         `} >{items.title}</h3>
                         </div>
-                        <div className="row justify-content-center">
+                        <div className="row ">
                             {items.expand.map(list =>(
                                 <div key={list.id} className="col-md-4 py-2">
                                 <Link className="card d-grid" to={list.url} css={css`

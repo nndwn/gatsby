@@ -43,7 +43,7 @@ const Footer = () => {
     `}>
         <div className="container-lg footer-top pb-4 ">
             <div className="row justify-content-center">
-                <div className="logo col-8 col-sm-6 col-md-2 d-flex flex-row mb-5">
+                <div className="logo col-9 col-sm-6 col-md-2 d-flex flex-row mb-5">
                     <div dangerouslySetInnerHTML={{__html: logowhite}}/>
                     <h4 className="h5">{title}</h4>
                 </div>
