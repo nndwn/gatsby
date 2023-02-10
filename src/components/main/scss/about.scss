@@ -6,12 +6,7 @@
     @extend %y;
     height: -webkit-fill-available;
 }
-%backgroundcolor {
-    background: rgb(0 36 99 / 20%);
-}
-
 .about {
-    @extend %backgroundcolor;
     .img-right {
         left: 0;
         @extend %y;
@@ -26,16 +21,6 @@
         @extend %y;
     }
 }
-.line-text::before{
-    background-color: var(--defaultcolor);
-}
-
-.mission {
-    @extend %backgroundcolor;
-    svg {
-        fill: var(--defaultcolor);
-    }
-}
 
 .vision, .about {
     mark {
@@ -44,7 +29,6 @@
     }
 }
 .img-right, .img-left {
-    background-color: var(--defaultcolor);
     .img-about {
         opacity: 0.5;
     }

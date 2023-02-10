@@ -1,4 +1,4 @@
-import React from "react";
+import React,{createElement} from "react";
 import { Link } from "gatsby";
 import { Email, Address, Telp} from "./icons";
 import { colorButtonDefault, textButtoncolorDefault,colorButtonalt,textButtoncoloralt} from "./colors";
@@ -8,7 +8,6 @@ import { colorButtonDefault, textButtoncolorDefault,colorButtonalt,textButtoncol
 export const Linked = ({to , name , cls , title, icon, children}) =>(<a href={`${ to == null  ? '#' : to}`} title={title} className={cls}>{children}{icon}{name}</a>)
 export const Capitalize = str => (str.charAt(0).toUpperCase() + str.slice(1).toLowerCase())
 export const Truncate = (str,limit,cutfront,cutback) => ( str.length > limit ? str.substring(cutfront, cutback) : str)
-export const Listurl = ({list, className, to, activeClassName}) => (<li ><Link className={className} activeClassName={activeClassName} to={to}>{list}</Link></li>)
 export const Icondesc =({name,div,a,span,nameicon,svg,url}) => {
     return(
     <div className={div}>
@@ -37,3 +36,6 @@ export const Button = ({ children, className, to, style}) => {
         {children}
     </Link>
 )}
+
+
+    

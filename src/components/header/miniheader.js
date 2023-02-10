@@ -2,6 +2,8 @@ import * as React from 'react'
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import {Slidedata, Bgheader } from './slide';
 import './css/miniheader.css'
+import { colorHeader} from '../colors';
+import { css } from '@emotion/react';
 
 
 
@@ -16,7 +18,14 @@ const Miniheader = ({title}) => {
                 />
                 <Bgheader/>
                 <div className='text container-lg text-center text-md-start'>
-                    <h1 className='fw-bold text-capitalize pt-5 line-text'>{title} </h1>
+                     <h1 className="pt-5 fw-bold line-text text-capitalize"  css={css`
+                        color: ${colorHeader};
+                        &.line-text::before {
+                            background-color: ${colorHeader};
+                        }
+                     `}>
+                        {title}
+                     </h1>
                 </div>
             </div>
 

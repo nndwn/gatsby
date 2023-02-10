@@ -1,6 +1,5 @@
 @use './custom.scss';
 @use './font.scss';
-@import './mixin';
 
 :root{
     --font-size-base :0.8rem;
@@ -11,9 +10,9 @@
 .truncate{
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap !important;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    display: -webkit-inline-box;
 }
 
 ul {
@@ -65,10 +64,14 @@ a{
 
 }
 .line-text{
-    @include line-text(2.5rem)
-}
-.line-text-full{
-    @include line-text(100%)
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -7px;
+        height: 5px;
+        width: 2.5rem;
+    }
 }
 
 a[role=button] {

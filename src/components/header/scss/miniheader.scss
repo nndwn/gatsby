@@ -6,15 +6,11 @@
     bottom: 0;
 }
 .miniheader{
-    height: 35vh;
-    color: var(--bs-light);
+    height: 40vh;
     .miniheader__image {
         @extend %absoluteImage;
     }
     .text {
         z-index: 2;
-    }
-    .line-text::before{
-        background-color: var(--bs-light);
     }
 }

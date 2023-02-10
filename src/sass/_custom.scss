@@ -50,48 +50,15 @@
 // Utilities
 @import "../../bs/utilities/api";
 // scss-docs-end import-stack
-@include media-breakpoint-up(sm) {  }
-
-
-
-footer {
-    h4 {
-        margin-bottom: 1rem;
-    }
-%md{
-    @include make-col(6);
-    @include media-breakpoint-up(md) {
-        @include make-col(3);
-    }
-}
-    .contactaddress{
-        @include make-col(12);
-        margin-top: 2rem;
-        @include media-breakpoint-up(md) {
-            margin-top:0;
-            @include make-col(3);
-        }
-    }
-    .services {
-        @extend %md;
-    }
-    .quicklink {
-        @extend %md;
-    }
-}
+@include media-breakpoint-up(sm) {}
 .about , .vision{
     @include media-breakpoint-down(md) {
-        color: var(--bs-white);
         .text-left , .text-right {
             z-index: 2;
             position: relative;
             mark {
-                background-color: #ffffff19;
                 color: inherit;
                 padding: 0;
-            }
-            .line-text::before{
-                background-color: var(--bs-white);
             }
         }
     }

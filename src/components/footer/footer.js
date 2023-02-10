@@ -1,98 +1,96 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Company from "../../hook/company";
-import { useStaticQuery,graphql } from "gatsby";
-import { Listurl, Icondesc } from "../tools";
+import { useStaticQuery,graphql, Link } from "gatsby";
+import {Icondesc} from "../tools";
 import { Sosial } from "../sosial";
 import styled from "@emotion/styled";
 import stylelist from "../../images/icon_list_1.svg"
 import './css/footer.css'
+import { Dataservice } from "../main/services";
+import { footer, subfooter, textfooter } from "../colors";
+import { css } from "@emotion/react";
 
 const Ul = styled.ul`
     list-style-image: url('${stylelist}');
 `
-
 const Footer = () => {
     const {title,logowhite,addreas,email,telp} =  Company()
     const data = useStaticQuery(graphql`
-    query {
-        allFooterJson {
-            nodes {
-                id
-                name
-            }
-        }
-        allServicesJson {
-            nodes {
-              id
-              name
-              type {
-                id
-                url
-                title
+        query{
+            allQuicklinkJson {
+                nodes {
+                  id
+                  name
+                  list {
+                    url
+                    item
+                    id
+                  }
+                }
               }
-            }
-          }
-        allQuicklinkJson {
-            nodes {
-                id
-                url
-                list
-            }
         }
-    }
     `)
     return(
-    <footer className="footer pt-5">
+    <footer className="footer pt-5" css={css`
+        color:${textfooter};
+        background-color: ${footer};
+        svg {
+            fill:${textfooter};
+        }
+        a {
+            color:${textfooter};
+        }
+    `}>
         <div className="container-lg footer-top pb-4 ">
-        <div className="row flex-row justify-content-center">
-            <div className="logo col-8 col-md-2 d-flex flex-row mb-5">
-                <div dangerouslySetInnerHTML={{__html: logowhite}}/>
-                <h4 className="h5">{title}</h4>
-            </div>
-            <div className="col-12 col-md-10 d-flex justify-content-end flex-wrap">
-        {data.allFooterJson.nodes.map(item => {
-            return(
-                <MenuList key={item.id} name={item.name} className={item.name.replace(/\W/g, "")}>
-                {item.name[1] <= item.name ? data.allServicesJson.nodes.map(node=> (
-                    <Fragment key={node.id}>
-                    {node.type.map(test => (
-                        <Listurl key={test.id} list={test.title} to={test.url}/>
+            <div className="row justify-content-center">
+                <div className="logo col-8 col-sm-6 col-md-2 d-flex flex-row mb-5">
+                    <div dangerouslySetInnerHTML={{__html: logowhite}}/>
+                    <h4 className="h5">{title}</h4>
+                </div>
+                <div className="col-12 col-md-10 d-flex justify-content-md-end flex-wrap justify-content-around">
+                    {Dataservice().map(node => (
+                        <Footerlist key={node.id} name={node.name}>
+                            {node.type.map(item => (
+                                <li key={item.id}><Link to={item.id}>{item.title}</Link></li>
+                                ))}
+                        </Footerlist>
                     ))}
-                    </Fragment>
-                    ))
-                    :item.name[2] <= item.name ? data.allQuicklinkJson.nodes.map(node => (
-                        <Listurl key={node.id} list={node.list} to={node.url}/>))
-                        :item.name[0] <= item.name ? 
-                        <>
-                            <li><Icondesc a="c" name={addreas} span="truncate" nameicon="address"/></li>
-                            <li><Icondesc a="c" name={telp} span="truncate" nameicon="telp"/></li>
-                            <li><Icondesc a="c" svg="email" span = "truncate" name={email} nameicon="email"/></li>
-                            <li><Sosial className="sosial text-center"/></li>
-                        </>
-                        : "" }
-                </MenuList>
-                    )})}
+                    {data.allQuicklinkJson.nodes.map(node => (
+                        <Footerlist key={node.id} name={node.name}>
+                                {node.list.map(item =>(
+                                    <li key={item.id}><Link to={item.url}>{item.item}</Link></li>
+                                ))}
+                        </Footerlist>
+                    ))}
+                    <div className="col-md-3 col-10">
+                        <h4>Contact & Address</h4>
+                        <div>
+                            <Icondesc a="c" name={addreas} span="text-wrap" nameicon="address"/>
+                            <Icondesc a="c" name={telp} span="truncate" nameicon="telp"/>
+                            <Icondesc a="c" svg="email" span = "truncate" name={email} nameicon="email"/>
+                            <Sosial className="sosial text-center"/>
+                        </div>
                     </div>
-        </div>
+                </div>
+            </div>
         </div>
         <Subfooter title={title}/>
     </footer>
     )
 }
-
-const Subfooter =({title}) =>(
-    <footer className="footer-bottom py-3 text-center ">
-        <span className="fs-6 fw-light">{new Date().getFullYear()} Ⓒ {title}.  All Right Reserved.</span>
-    </footer>
-)
-
-const MenuList = ({name,children,className}) => (
-    <div className={className}>
+const Footerlist = ({name, children}) => (
+    <div className="col-md-3 mb-3">
         <h4>{name}</h4>
         <Ul>
             {children}
         </Ul>
     </div>
+)
+
+const Subfooter =({title}) =>(
+    <footer className="footer-bottom py-3 text-center" style={{backgroundColor:`${subfooter}`}}>
+        <span className=" fw-light">{new Date().getFullYear()} Ⓒ {title}.  All Right Reserved.</span>
+    </footer>
 )
 
 export default Footer
