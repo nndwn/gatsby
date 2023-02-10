@@ -28,7 +28,7 @@ const MainAbout = ({page}) => {
                 text
                 image {
                   childImageSharp {
-                    gatsbyImageData(quality: 50, placeholder: BLURRED, formats: JPG)
+                    gatsbyImageData(placeholder: BLURRED, formats: JPG)
                   }
                 }
                 name

@@ -1,13 +1,13 @@
 [
     {
-    "name" : "about us",
-    "title" : "about", 
-    "text": "The Professional services since 2010 PT. Zea Enjiniring Service(ZES) was supporting our partner to provide TPI/Technical professional in Indonesia, Malaysia, Singapore, China, India, Korea & worldwide. Registered on Sep 2022 an engagedexclusively as production services an independent Inspection andNon-destructive testing Consultancy services. We build anddevelop our new services; Valve Refurbishment, Project Management, QHSE provider, Blasting / Painting, Tank Cleaning, Pipe Cleaning as production supporting for Oil and Gas, marine, Offshore service Company. We committed to highly prioritytoQuality and Safety",
-    "image": "./images/about.jpg"
+    "name" :"about us",
+    "title" :"about", 
+    "text":"The Professional services since 2010 PT. Zea Enjiniring Service(ZES) was supporting our partner to provide TPI/Technical professional in Indonesia, Malaysia, Singapore, China, India, Korea & worldwide. Registered on Sep 2022 an engagedexclusively as production services an independent Inspection andNon-destructive testing Consultancy services. We build anddevelop our new services; Valve Refurbishment, Project Management, QHSE provider, Blasting / Painting, Tank Cleaning, Pipe Cleaning as production supporting for Oil and Gas, marine, Offshore service Company. We committed to highly prioritytoQuality and Safety",
+    "image":"./images/sample13.jpg"
     },
     {
-    "name" : "vision & mission",
-    "title" : "vision", 
+    "name" :"vision & mission",
+    "title" :"vision", 
     "text":"Our commitment to understanding and meeting theneeds of our customers with the expectation of satisfaction from what we do. We serve the global energy industry for decades, providing world-class services such as inspections, technical audits, construction support sites, and assets all whileminimizing risks that can impact the safety of personnel and the environment. PT. ZEA ENGINEERING SERVIS (ZES) can be aworldwide partner in inspection, Civil BuildingConstruction, Selection and Placement Activities of Domestic and Foreign Workers, Private EngineeringEducation, Tank Industry, Water Tanks And Metal Containers, Repair Of Metal Products Ready To Install For Buildings, Tanks, Water Reservoirs And SteamGenerators, NDT Consultant. We aim to provide themost competitive and most productive service to our customers. As your technical service we can promiseglobal access to experience, expertise and innovationlike no other",
     "image":"./images/vision.jpg"
     }

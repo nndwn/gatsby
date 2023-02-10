@@ -18,7 +18,7 @@ const MainServices = ({page}) => {
                         }
                         `} >{node.name}</h3>
                     </div>
-                    <div className="row">
+                    <div className="row justify-content-center">
                         {
                             node.type.map(items =>(
                                 <div key={items.id} className="col-md-4 py-2">
@@ -56,7 +56,7 @@ const MainServices = ({page}) => {
                         }
                         `} >{items.title}</h3>
                         </div>
-                        <div className="row">
+                        <div className="row justify-content-center">
                             {items.expand.map(list =>(
                                 <div key={list.id} className="col-md-4 py-2">
                                 <Link className="card d-grid" to={list.url} css={css`

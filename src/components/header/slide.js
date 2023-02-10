@@ -15,7 +15,7 @@ export const Slide = () => {
         <Carousel 
         pause={false}
         controls={false}
-        touch = {false}
+        touch = {true}
         wrap = {true}
         >
             {
@@ -36,8 +36,8 @@ export const Slide = () => {
                                     { null == node.textfour && aktiv ? "" : <div className="fs-6 fw-light text-break text-center">{node.textfour}</div>}
                                 </div>
                                 { node.button[0].value + node.button[1].value > 0 && aktiv ? <div className="mt-5 d-flex buttons justify-content-center">
-                                    {node.button[0].value > 0 && aktiv ? <Button style={`primary`} className="left mx-2 col-3 mb-2 p-3" to={node.button[0].url}>{node.button[0].name}</Button>:""}
-                                    {node.button[1].value > 0 && aktiv ? <Button style={`secondary`}  className="right mx-2 col-3 mb-2 p-3" to={node.button[1].url}>{node.button[1].name}</Button>:""}
+                                    {node.button[0].value > 0 && aktiv ? <Button style={`primary`} className="left mx-2 col-4 mb-2 p-3" to={node.button[0].url}>{node.button[0].name}</Button>:""}
+                                    {node.button[1].value > 0 && aktiv ? <Button style={`secondary`}  className="right mx-2 col-4 mb-2 p-3" to={node.button[1].url}>{node.button[1].name}</Button>:""}
                                 </div>:null}
                             </div>
                         </div>
