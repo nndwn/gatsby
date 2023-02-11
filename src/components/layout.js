@@ -20,6 +20,7 @@ const Layout =({children, page}) =>{
             <Header page={page}/>
             <Main page={page}>
              {children}
+             
             </Main>
           <Footer/>
         </>

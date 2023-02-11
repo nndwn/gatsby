@@ -1,6 +1,6 @@
 import React,{ useState } from "react";
 import Company from "../../hook/company";
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { graphql, useStaticQuery, Link} from "gatsby";
 import BodyClassName from "react-body-classname";
 import { css } from "@emotion/react";
 import { colornav,colortogle,bgcolornavmobile, hovercolornav, bgcolormodal } from "../colors";
@@ -12,6 +12,7 @@ const Nav = props => {
     const handleClick = () => {
         setToggle(!toggle);
       };
+      const name = Company().title.split(" ")
     return(
         <nav  {...props} role= "navigation" className="navigation position-fixed" css={css`
             a{ 
@@ -28,11 +29,10 @@ const Nav = props => {
             }`}>
             <div className="d-flex py-2 justify-content-between container-lg">
                 <div className="logo col-lg-7 col-10 left">
-                    <Link to="/">
-                        <i dangerouslySetInnerHTML={{__html:Company().icon}}/>
-                        <span className=" d-none d-sm-inline h4-lg h5 fw-bold ms-2 text-wrap line-text" css={css`
-                         &::before{background-color: ${colortogle};}
-                        `}>{Company().title}</span>
+                    <Link to="/" className="d-flex">
+                        <div dangerouslySetInnerHTML={{__html:Company().icon}}/>
+                        <span className="lh-1 fs-5 fw-bold ms-2 text-wrap align-self-center">{name[0]+" "+name[1]}<br/>{name[2]} </span>
+
                     </Link>
                 </div>
                 <ul className="d-lg-flex d-none col-5 m-0 align-items-center right justify-content-end">
@@ -44,7 +44,7 @@ const Nav = props => {
                 <div className="nav-toggle col-2 d-lg-none align-self-center ">
                
                 {toggle && (
-                    <div role={'button'} tabIndex={0} onClick={handleClick} onKeyDown={handleClick} className="bg-nav" css={css`
+                    <div role='button' tabIndex={0} onClick={handleClick} onKeyDown={handleClick} className="bg-nav" aria-label="modal" css={css`
                         background-color: ${bgcolormodal}
                     `}></div>
                 )}
@@ -69,7 +69,7 @@ const Nav = props => {
                         background-color: ${colortogle};
                     }
                 `}></div>
-                <div className="nav-trigger" role={'button'} tabIndex={0} onClick={handleClick} onKeyDown={handleClick}></div>
+                <div className="nav-trigger" role='button' tabIndex={0} onClick={handleClick} onKeyDown={handleClick} aria-label="navigation"></div>
                 </div>
                
             </div>

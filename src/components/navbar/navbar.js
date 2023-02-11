@@ -22,7 +22,7 @@ const Navbar = () => {
             //console.log(scrollYProgress)
             if (scrollYProgress > 0.05) {
               textApi.start({ y: '-100%' })
-                colorApi.start({ background: colordefault, top:'0'})
+              colorApi.start({ background: colordefault, top:'0'})
             } else {
               textApi.start({ y: '0' })
               colorApi.start({ background: transparent,top:'40px'})
