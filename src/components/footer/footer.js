@@ -5,7 +5,6 @@ import {Icondesc} from "../tools";
 import { Sosial } from "../sosial";
 import styled from "@emotion/styled";
 import stylelist from "../../images/icon_list_1.svg"
-import './css/footer.css'
 import { Dataservice } from "../main/services";
 import { footer, subfooter, textfooter } from "../colors";
 import { css } from "@emotion/react";
