@@ -33,6 +33,7 @@ const Footer = () => {
     return(
     <footer className="footer pt-5" css={css`
         color:${textfooter};
+        font-size: 0.8rem;
         background-color: ${footer};
         svg {
             fill:${textfooter};
@@ -43,32 +44,48 @@ const Footer = () => {
     `}>
         <div className="container-lg footer-top pb-4 ">
             <div className="row justify-content-center">
-                <div className="logo col-9 col-sm-6 col-md-2 d-flex flex-row mb-5">
+                <div className="logo col-9 col-sm-6 col-md-2 d-flex flex-row mb-5 align-items-center" css={css`
+                    gap: 2rem;
+                    svg {
+                        height: 5rem;
+                    }
+                `}>
                     <div dangerouslySetInnerHTML={{__html: logowhite}}/>
-                    <h4 className="h5">{title}</h4>
+                    <h4 className="h5 text-capitalize fw-bold m-0">{title}</h4>
                 </div>
                 <div className="col-12 col-md-10 d-flex justify-content-md-end flex-wrap justify-content-around">
                     {Dataservice().map(node => (
                         <Footerlist key={node.id} name={node.name}>
                             {node.type.map(item => (
-                                <li key={item.id}><Link to={item.id}>{item.title}</Link></li>
+                                <li className="text-capitalize fw-normal ml-3" key={item.id}><Link  to={`/${node.menu}/#${item.title}`} >{item.title}</Link></li>
                                 ))}
                         </Footerlist>
                     ))}
                     {data.allQuicklinkJson.nodes.map(node => (
                         <Footerlist key={node.id} name={node.name}>
                                 {node.list.map(item =>(
-                                    <li key={item.id}><Link to={item.url}>{item.item}</Link></li>
+                                    <li className="text-capitalize fw-normal ml-3" key={item.id}><Link to={item.url}>{item.item}</Link></li>
                                 ))}
                         </Footerlist>
                     ))}
                     <div className="col-md-3 col-10">
-                        <h4>Contact & Address</h4>
-                        <div>
-                            <Icondesc a="c" name={addreas} span="text-wrap" nameicon="address"/>
-                            <Icondesc a="c" name={telp} span="truncate" nameicon="telp"/>
-                            <Icondesc a="c" svg="email" span = "truncate" name={email} nameicon="email"/>
-                            <Sosial className="sosial text-center"/>
+                        <h4 className="text-capitalize fw-bold m-0">Contact & Address</h4>
+                        <div css={css`
+                            svg {
+                                height:1rem;
+                            }
+                            .email {
+                                height: 0.8rem;
+                            }
+                            a{
+                                column-gap: 1rem;
+                                grid-template-columns: 1.2rem auto;
+                            }
+                        `}>
+                            <Icondesc a="d-grid align-items-center" name={addreas} span="text-wrap" nameicon="address"/>
+                            <Icondesc a="d-grid align-items-center" name={telp} span="truncate" nameicon="telp"/>
+                            <Icondesc a="d-grid align-items-center" svg="email" span = "truncate" name={email} nameicon="email"/>
+                            <Sosial className="sosial text-center my-3" a="px-2" />
                         </div>
                     </div>
                 </div>
@@ -80,7 +97,7 @@ const Footer = () => {
 }
 const Footerlist = ({name, children}) => (
     <div className="col-md-3 mb-3">
-        <h4>{name}</h4>
+        <h4 className="text-capitalize fw-bold m-0">{name}</h4>
         <Ul>
             {children}
         </Ul>

@@ -42,6 +42,26 @@ export const Button = ({ children, className, to, style}) => {
     </Link>
 )}
 
+export const ContainerCardlist = ({children}) => (
+    <div className="container-lg py-5">
+        <div className="row justify-content-center" >
+            {children}
+        </div>
+    </div>
+)
+
+export const TitleCardlist = ({name}) => (
+    <div className="text-center mb-3">
+        <h3 className="fw-bold text-capitalize line-text" css={css`
+            &::before {
+                background-color: ${servicetext}
+            }
+        `}>
+            {name}
+        </h3>
+    </div>
+)
+
 export const Cardlist = ({image, title, desc, to}) => (
     <div className="col-md-4 py-2">
         <Link className="card " to={to} css={css`
@@ -54,14 +74,7 @@ export const Cardlist = ({image, title, desc, to}) => (
                 <GatsbyImage
                     alt={title}
                     image={getImage(image)}
-                    className="card-img-top position-absolute"
-                    css={css`
-                        position: absolute;
-                        left: 0;
-                        right: 0;
-                        top: 0;
-                        bottom: 0;
-                    `}
+                    className="card-img-top position-absolute absoluteimage"
                 />
             </div>
             <div className="card-body text-center" style={{color:`${servicetext}`}}>

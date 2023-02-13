@@ -2,11 +2,11 @@
     {
         "name":"quick link",
         "list": [
-            {"item": "about us", "url":"#","id":"1"},
-            {"item": "contact us", "url":"#", "id":"2"},
-            {"item": "our services", "url":"#", "id":"3"},
-            {"item": "ecperience", "url":"#", "id":"4"},
-            {"item": "support", "url":"#","id":"5"}
+            {"item": "News", "url":"#","id":"1"},
+            {"item": "Products", "url":"#", "id":"2"},
+            {"item": "Contact", "url":"/contact", "id":"3"},
+            {"item": "Our Projects", "url":"/projects", "id":"4"},
+            {"item": "FAQ", "url":"#","id":"5"}
         ]
     }
 

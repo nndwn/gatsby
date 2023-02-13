@@ -1,41 +1,33 @@
 import React,{Suspense, Fragment} from "react";
 import { graphql, useStaticQuery} from "gatsby";
-import { servicetext } from "../colors";
-import { css } from "@emotion/react";
-import { Cardlist } from "../tools";
+import { Cardlist,ContainerCardlist, TitleCardlist} from "../tools";
+import { Loading} from "./accesories";
 
-const OfferedComponent = React.lazy(() => import('./offered'))
+const OfferedComponent = React.lazy(() =>  import('./offered'))
 
 
 const MainServices = ({page}) => {
     return (
         <>
         {page == null ? Dataservice().map(node => (
-            <div className="services container-lg py-5" >
-                <div className="row justify-content-center" key={node.id}>
-                    <div className="text-center mb-3">
-                        <h3 className="fw-bold text-capitalize line-text" css={css`
-                        &::before{
-                            background-color: ${servicetext}
-                        }
-                        `} >{node.name}</h3>
-                    </div>
+                <ContainerCardlist key={node.id}>
+                    <TitleCardlist name={node.name}/>
                     <div className="row">
                         {
                             node.type.map(items =>(
                                 <Fragment key={items.id}>
-                                    <Cardlist image={items.img} title={items.title} desc={items.desc} to={`/services/#${items.title}`}></Cardlist>
+                                    <Cardlist image={items.img} title={items.title} desc={items.desc} to={`/${node.menu}/#${items.title}`}></Cardlist>
                                 </Fragment>
                             ))
                         }
                     </div>
-                </div>
-                </div>
+            </ContainerCardlist>
         )):
-        <Suspense fallback = {<div>loading ...</div>}>
+        <Suspense fallback = {<Loading/>}>
             <OfferedComponent/>
         </Suspense>
         }
+        
         </>
     ) 
 }
@@ -47,10 +39,10 @@ export const Dataservice = () => {
                 nodes {
                 id
                 name
+                menu
                 type {
                     id
                     desc
-                    url
                     title
                     img {
                     childImageSharp {
@@ -60,7 +52,6 @@ export const Dataservice = () => {
                     expand {
                         desc
                         id
-                        url
                         title
                         img {
                           childImageSharp {

@@ -78,3 +78,19 @@ a[role=button] {
     border-radius: .3125rem;
     text-align: center;
 }
+
+.absoluteimage {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.vh-40 {
+    height: 40vh;
+}
+.z1{
+    z-index: 1;
+}
+.opacity5 {
+    opacity: 0.5;
+}

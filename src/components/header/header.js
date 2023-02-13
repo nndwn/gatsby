@@ -4,7 +4,7 @@ import Miniheader from "./miniheader";
 
 
 const Header = ({children, page}) =>(
-        <header>
+        <header className="position-relative">
         {page == null ? <Slide/>:<Miniheader title={page}/>}
         {children}
         </header>

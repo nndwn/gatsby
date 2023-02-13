@@ -2,25 +2,39 @@ import React from "react";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 import { Button } from "../tools";
-import { colorabout,colorbgabout,coloraboutmobile,colormarkmobile } from "../colors";
+import { colorabout,
+        colorbgabout,
+        coloraboutmobile,
+        colormarkmobile, 
+        transparent } from "../colors";
 import { css } from "@emotion/react";
-import './css/about.css'
+import { useInView, animated, useSpring} from '@react-spring/web'
+import Mission from "./mission";
+import { buildInteractionObserverThreshold } from "../pageview";
 
 const MainAbout = ({page}) => {
+
+  const settinguseInView = {
+      rootMargin: '-45% 0px -45% 0px',
+      amount: buildInteractionObserverThreshold(),
+      once: true,
+  }
+  const [refright, right] = useInView (
+    () => ({
+        from: {opacity: 0, x: -80,},
+        to: {opacity: 1, x: 0,},
+        config: {tension:100}
+    }),settinguseInView
+   )
+    const [refleft, left] = useInView (
+      () => ({
+          from: {opacity: 0, x: 80,},
+          to: {opacity: 1, x: 0,},
+          config: {tension:100}
+      }),settinguseInView
+      )
     const data = useStaticQuery (graphql`
     query{
-            allMissionJson {
-              nodes {
-                id
-                name
-                list {
-                  icon
-                  id
-                  text
-                  title
-                }
-              }
-            }
             allAboutJson {
               nodes {
                 title
@@ -36,35 +50,64 @@ const MainAbout = ({page}) => {
             }
           }
     `)
-    const dataMission = data.allMissionJson.nodes
     return (
+      <>
       <div css={css`
-        .line-text::before {
-          background-color: ${colorabout};
+        .about {
+          .img-right {
+            left:0;
+          }
         }
-        .mission, .about{
+        .about .img-right, .vision .img-left, .img-about{
+          top:0;
+          bottom:0;
+        }
+        .vision {
+          .img-left {
+              right: 0;
+              }
+        }
+        .vision, .about{
+          mark {
+            background-color: ${transparent};
+            color: inherit;
+            }
+        }
+        .img-about{
+          height: -webkit-fill-available;
+          opacity: 0.5;
+        }
+        .about{
           background-color: ${colorbgabout};
         }
-        & svg{
-          fill: ${colorabout};
-        }
-        & .img-right, .img-left {
+        & .img-right, .img-left,.line-text::before {
           background-color: ${colorabout};
         }
         @media (max-width: 768px){
-          .about, .vision {color:${coloraboutmobile};
-          }
+          .about, .vision {
+            color:${coloraboutmobile};
+              .text-left , .text-right {
+                z-index: 2;
+                position: relative;
+                }
+              }
           mark{
             background-color:${colormarkmobile}!important;
+            padding: 0;
           }
           .line-text::before{
             background-color: ${coloraboutmobile};
           }
         }
       `}>
-     { data.allAboutJson.nodes.map(node => (
-        <div className={`${node.id === data.allAboutJson.nodes[0].id ? "about" : "vision" } position-relative py-5`} key={node.id}>
-            <div className={ `${node.id === data.allAboutJson.nodes[0].id ? "img-right" : "img-left" } col-12 col-md-6 position-absolute`}>
+     { 
+      
+      data.allAboutJson.nodes.map(node => 
+     { const condition = node.id === data.allAboutJson.nodes[0].id
+      return(
+        <div className={condition ? "about" : "vision"} key={node.id}>
+          <animated.div className="position-relative py-5" ref={condition ? refright : refleft} style={condition ? right : left} >
+            <div className={ `${condition ? "img-right" : "img-left" } col-12 col-md-6 position-absolute`}>
                <GatsbyImage
                 alt= {node.title}
                 image ={ getImage(node.image)}
@@ -72,38 +115,21 @@ const MainAbout = ({page}) => {
                />
             </div>
             <div className="text-left container-lg ">
-                <div className={`${node.id === data.allAboutJson.nodes[0].id ? "offset-md-6" : "" } col-12 col-md-6  row px-3`}>
+              <div className={`${condition ? "offset-md-6" : "" } col-12 col-md-6  row px-3`}>
                     <h3 className="mb-4 fw-bold line-text text-capitalize">{node.name}</h3>
-                    {node.id === data.allAboutJson.nodes[0].id ? "": <h4 className="text-capitalize"> {node.title}</h4>}
+                    {condition ? "": <h4 className="text-capitalize"> {node.title}</h4>}
                     <p className="lh-base"><mark>{node.text}</mark></p>
-                    {node.id === data.allAboutJson.nodes[0].id ?  null == page ? <div className="my-3">
+                    {condition ?  null == page ? <div className="my-3">
                 <Button style={`primary`} className="col-3 mb-2 p-3" to={node.title}>Read More</Button>
                 </div>: "" :"" }
-            </div>
-            </div>
-        </div>
-      ))}
-      <div className="py-5 mission">
-      {dataMission.map(node => (
-        <div className="container-lg" key={node.id}>
-            <div className="text-center col-12">
-              <h3 className="text-capitalize">{node.name}</h3>
-            </div>
-            <div className="row">
-            {node.list.map(node =>(
-              <div key={node.id} className="col-12 col-sm-4 d-flex flex-column text-center align-items-center">
-                <div className="mt-3" dangerouslySetInnerHTML={{__html:node.icon}}/>
-                <div className="mt-5">
-                    <h5 className="fw-bold text-capitalize">{node.title}</h5>
-                    <p className="lh-base">{node.text}</p>
-                </div>
               </div>
-            ))}
             </div>
+          </animated.div>
         </div>
-      ))}
+      )})}
       </div>
-        </div>
+      <Mission/>
+      </>
     )
 }
 

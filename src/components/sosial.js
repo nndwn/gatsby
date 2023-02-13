@@ -1,8 +1,9 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Linked } from "./tools";
+import { a } from "@react-spring/web";
 
-export const Sosial = ({className}) => {
+export const Sosial = ({className, a}) => {
     const sosial = useStaticQuery(graphql`
     query{
       allSosialJson {
@@ -20,7 +21,7 @@ export const Sosial = ({className}) => {
       <div className={className}>
         {
           sosial.allSosialJson.nodes.map(sosial => (
-            <Linked key={sosial.id} title={sosial.name} to={`${sosial.link + sosial.username}`}>
+            <Linked cls={a} key={sosial.id} title={sosial.name} to={`${sosial.link + sosial.username}`}>
                     <i dangerouslySetInnerHTML={{__html:sosial.icon}}/>
             </Linked>
           ))

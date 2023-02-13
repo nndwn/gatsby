@@ -1,5 +1,6 @@
 [
   {"name": "Our Experience",
+    "menu":"projects",
    "list": [
     {
       "id":"131",
@@ -41,19 +42,19 @@
       "id":"137",
       "title":"Adnoc Offshore Project",
       "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
-      "img":"./images/sample20.jpg"
+      "img":"./images/sample20.jpeg"
     },
     {
       "id":"138",
       "title":"ENI Merakesh",
       "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
-      "img":"./images/sample21.jpg"
+      "img":"./images/sample21.jpeg"
     },
     {
       "id":"139",
       "title":"OGDCL Project",
       "desc":"Aliquam erat volutpat. Sed facilisis, libero id eleifend rutrum, sapien lorem laoreet.",
-      "img":"./images/sample22.jpg"
+      "img":"./images/sample22.jpeg"
     }
   ]
 }
