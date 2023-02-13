@@ -8,31 +8,10 @@ import { colorabout,
         colormarkmobile, 
         transparent } from "../colors";
 import { css } from "@emotion/react";
-import { useInView, animated, useSpring} from '@react-spring/web'
 import Mission from "./mission";
-import { buildInteractionObserverThreshold } from "../pageview";
+import { FadeIntop } from "../pageview";
 
 const MainAbout = ({page}) => {
-
-  const settinguseInView = {
-      rootMargin: '-45% 0px -45% 0px',
-      amount: buildInteractionObserverThreshold(),
-      once: true,
-  }
-  const [refright, right] = useInView (
-    () => ({
-        from: {opacity: 0, x: -80,},
-        to: {opacity: 1, x: 0,},
-        config: {tension:100}
-    }),settinguseInView
-   )
-    const [refleft, left] = useInView (
-      () => ({
-          from: {opacity: 0, x: 80,},
-          to: {opacity: 1, x: 0,},
-          config: {tension:100}
-      }),settinguseInView
-      )
     const data = useStaticQuery (graphql`
     query{
             allAboutJson {
@@ -104,9 +83,9 @@ const MainAbout = ({page}) => {
       
       data.allAboutJson.nodes.map(node => 
      { const condition = node.id === data.allAboutJson.nodes[0].id
-      return(
+     return(
         <div className={condition ? "about" : "vision"} key={node.id}>
-          <animated.div className="position-relative py-5" ref={condition ? refright : refleft} style={condition ? right : left} >
+          <FadeIntop className="position-relative py-5">
             <div className={ `${condition ? "img-right" : "img-left" } col-12 col-md-6 position-absolute`}>
                <GatsbyImage
                 alt= {node.title}
@@ -124,7 +103,7 @@ const MainAbout = ({page}) => {
                 </div>: "" :"" }
               </div>
             </div>
-          </animated.div>
+          </FadeIntop>
         </div>
       )})}
       </div>

@@ -5,7 +5,7 @@ import { css } from "@emotion/react";
 import { colortextcontent } from "../colors";
 import { Parallax } from "./accesories";
 import { Loading } from "./accesories";
-
+import MainContact from "./contact";
 const ServiceComponent = React.lazy(() => import('./services'))
 const ExpComponent = React.lazy(()=> import('./experi'))
 
@@ -22,7 +22,7 @@ const data = Navdata()
                 {null == page || page === data[2].menu ?  <ExpComponent/>:""} 
             </Suspense>
             {/* {null == page || page === data[1].menu ? <MainServices page={page}/>:""} */}
-            {/* {null == page || page === data[2].menu ?  <MainExperience/>:""} */}
+            {null == page || page === data[3].menu ?  <MainContact/>:""}
             {children}
         </main>
     )
